@@ -4,104 +4,12 @@
   <PropertyGroup Label="UserMacros"/>
   <!-- config agnostic -->
   <PropertyGroup>
-    <!-- special prop for multiple include checking -->
-    <DEPS_PROPS>true</DEPS_PROPS>
-	<!-- binary deps -->
 	<DepsPath>$(MSBuildThisFileDirectory)</DepsPath>
-	<DepsOutDir>$(DepsPath)lib\$(SimpleConfiguration)\$(PlatformName)\$(PlatformToolset)\</DepsOutDir>
-	<DepsBuildDir>$(DepsPath)..\.build\dependencies\$(ProjectName)\$(SimpleConfiguration)\$(PlatformName)\$(PlatformToolset)\</DepsBuildDir>
-	<DepsToolsDir>$(DepsPath)..\.build\tools_bin\</DepsToolsDir>
-	<!-- link search paths -->
-	<DepsBuiltPath>$(DepsPath)lib\$(SimpleConfiguration)\$(PlatformName)\$(PlatformToolset)\</DepsBuiltPath>
-	<DepLibsPath>
-	$(DepsBuiltPath);
-	$(DepsPath)OpenCL\lib\$(PlatformName)\;
-	$(DepsPath)libiomp\lib\$(PlatformName)\
-	</DepLibsPath>
-	<!-- libraries -->
-	<CadlibLib>AVCadLib.lib</CadlibLib>
-	<CryptoppLib>cryptlib.lib</CryptoppLib>
-	<CurlLib>curl.lib</CurlLib>
-	<ExifLib>lib_exif.lib</ExifLib>
-	<ExifDll>$(DepsPath)lib\$(SimpleConfiguration)\$(PlatformName)\$(PlatformToolset)\lib_exif.dll</ExifDll>
-	<IconvLib>libiconv.dll.lib</IconvLib>
-	<IconvDll>$(DepsPath)lib\$(SimpleConfiguration)\$(PlatformName)\$(PlatformToolset)\libiconv.dll</IconvDll>
-	<LibjpegLib>LibJpeg.lib</LibjpegLib>
-	<LibpngLib>LibPng.lib</LibpngLib>
-	<LibsvmLib>LibSVM.lib</LibsvmLib>
-	<LibtiffLib>LibTiff.lib</LibtiffLib>
-	<ZlibLib>Zlib.lib</ZlibLib>
-	<ZxingLib>ZXing.lib</ZxingLib>
-	<GtestLib>gtest.lib</GtestLib>
-	<FmtLib>$(DepsBuiltPath)fmt.lib</FmtLib>
-	<BenchmarkLib>benchmark.lib</BenchmarkLib>
-	<CeresLib>ceres-static.lib</CeresLib>
-	<GlogLib>libglog_static.lib</GlogLib>
-	<OpenClLib>OpenCL.lib</OpenClLib>
-	<BoostLib>libboost_random.lib</BoostLib>
-	<OpencvLib>opencv_imgproc.lib;
-	opencv_core.lib;
-	opencv_features2d.lib;
-	opencv_calib3d.lib;
-	opencv_video.lib;
-	opencv_photo.lib;
-	opencv_imgcodecs.lib;
-	opencv_imgproc.lib;
-	opencv_objdetect.lib;
-	opencv_stitching.lib;
-	opencv_flann.lib</OpencvLib>
-	<FlatbuffersLib>flatbuffers.lib</FlatbuffersLib>
-	<BoringSSLLib>boringssl.lib</BoringSSLLib>
-	<!-- includes -->
-  <BoostInclude>$(DepsPath)build\boost\algorithm\include;$(DepsPath)build\boost\array\include;$(DepsPath)build\boost\asio\include;$(DepsPath)build\boost\assert\include;$(DepsPath)build\boost\beast\include;$(DepsPath)build\boost\bind\include;$(DepsPath)build\boost\circular_buffer\include;$(DepsPath)build\boost\concept_check\include;$(DepsPath)build\boost\config\include;$(DepsPath)build\boost\container\include;$(DepsPath)build\boost\container_hash\include;$(DepsPath)build\boost\core\include;$(DepsPath)build\boost\crc\include;$(DepsPath)build\boost\date_time\include;$(DepsPath)build\boost\detail\include;$(DepsPath)build\boost\filesystem\include;$(DepsPath)build\boost\function\include;$(DepsPath)build\boost\functional\include;$(DepsPath)build\boost\integer\include;$(DepsPath)build\boost\io\include;$(DepsPath)build\boost\intrusive\include;$(DepsPath)build\boost\iterator\include;$(DepsPath)build\boost\lexical_cast\include;$(DepsPath)build\boost\math\include;$(DepsPath)build\boost\move\include;$(DepsPath)build\boost\mp11\include;$(DepsPath)build\boost\mpl\include;$(DepsPath)build\boost\numeric_conversion\include;$(DepsPath)build\boost\optional\include;$(DepsPath)build\boost\parameter\include;$(DepsPath)build\boost\predef\include;$(DepsPath)build\boost\preprocessor\include;$(DepsPath)build\boost\random\include;$(DepsPath)build\boost\range\include;$(DepsPath)build\boost\regex\include;$(DepsPath)build\boost\signals2\include;$(DepsPath)build\boost\smart_ptr\include;$(DepsPath)build\boost\static_assert\include;$(DepsPath)build\boost\system\include;$(DepsPath)build\boost\throw_exception\include;$(DepsPath)build\boost\tokenizer\include;$(DepsPath)build\boost\type_index\include;$(DepsPath)build\boost\type_traits\include;$(DepsPath)build\boost\utility\include;$(DepsPath)build\boost\variant\include;$(DepsPath)build\boost\winapi\include;$(DepsPath)build\boost\endian\include;$(DepsPath)build\boost\tuple\include;$(DepsPath)build\boost\geometry\include;$(DepsPath)build\boost\process\include;$(DepsPath)build\boost\uuid\include;$(DepsPath)build\boost\safe_numerics\include;$(DepsPath)build\boost\logic\include;$(DepsPath)build\boost\gil\include;$(DepsPath)build\boost\variant2\include;$(DepsPath)build\boost\interprocess\include</BoostInclude>
-	<CadlibInclude>$(DepsPath)build\CadLib\include</CadlibInclude>
-	<CryptoppInclude>$(DepsPath)build\cryptlib</CryptoppInclude>
-	<CurlInclude>$(DepsPath)build\curl\include</CurlInclude>
-	<EigenInclude>$(DepsPath)build\eigen</EigenInclude>
-    <OpengrInclude>$(DepsPath)build\OpenGR\include</OpengrInclude>
-	<ExifInclude>$(DepsPath)build\libexif</ExifInclude>
-	<IconvInclude>$(DepsPath)build\libiconv\include</IconvInclude>
-	<LibjpegInclude>$(DepsPath)build\LibJpeg\include</LibjpegInclude>
-	<LibpngInclude>$(DepsPath)build\LibPng\include</LibpngInclude>
-	<LibsvmInclude>$(DepsPath)build\LibSVM\include</LibsvmInclude>
-	<LibtiffArchInclude>$(DepsPath)build\LibTiff\include\windows\$(PlatformName)\</LibtiffArchInclude>
-	<LibtiffInclude>$(DepsPath)build\LibTiff\include;$(LibtiffArchInclude)</LibtiffInclude>
-	<OpencvInclude>$(DepsPath)build\OpenCV\calib3d\include;$(DepsPath)build\OpenCV\common\include;$(DepsPath)build\OpenCV\common\pregenerated\pub;$(DepsPath)build\OpenCV\core\include;$(DepsPath)build\OpenCV\features2d\include;$(DepsPath)build\OpenCV\flann\include;$(DepsPath)build\OpenCV\imgcodecs\include;$(DepsPath)build\OpenCV\imgproc\include;$(DepsPath)build\OpenCV\ml\include;$(DepsPath)build\OpenCV\modules\include;$(DepsPath)build\OpenCV\objdetect\include;$(DepsPath)build\OpenCV\photo\include;$(DepsPath)build\OpenCV\video\include;$(DepsPath)build\OpenCV\stitching\include;</OpencvInclude>
-	<PugiXmlInclude>$(DepsPath)build\pugixml\src</PugiXmlInclude>
-	<SimpleIniInclude>$(DepsPath)build\simpleini\src</SimpleIniInclude>
-	<ZlibInclude>$(DepsPath)build\Zlib\include</ZlibInclude>
-	<ZxingInclude>$(DepsPath)build\ZXing</ZxingInclude>
-	<JsonInclude>$(DepsPath)build\json\include</JsonInclude>
-	<CodeMeterInclude>$(DepsPath)build\CodeMeter</CodeMeterInclude>
-	<GtestInclude>$(DepsPath)build\gtest\googletest\include</GtestInclude>
-	<FmtInclude>$(DepsPath)build\fmt\include</FmtInclude>
-	<BenchmarkInclude>$(DepsPath)build\benchmark\include</BenchmarkInclude>
-	<CeresInclude>$(DepsPath)build\ceres-solver\include;$(DepsPath)build\ceres-solver\pregenerated;$(DepsPath)build\ceres-solver\internal\ceres\miniglog</CeresInclude>
-	<GlogInclude>$(DepsPath)build\ceres-windows\glog\src\windows</GlogInclude>
-	<RapidXmlInclude>$(DepsPath)rapidxml\</RapidXmlInclude>
-	<DirectShowBaseClassesInclude>$(DepsPath)build\DirectShowBaseClasses\include\</DirectShowBaseClassesInclude>
-	<RangInclude>$(DepsPath)build\rang\</RangInclude>
-	<OpenClInclude>$(DepsPath)OpenCL\include\</OpenClInclude>
-	<FlatbuffersInclude>$(DepsPath)build\flatbuffers\include</FlatbuffersInclude>
-	<BoringSSLInclude>$(DepsPath)build\boringssl\src\include</BoringSSLInclude>
-	<Cli11Include>$(DepsPath)build\CLI11\include</Cli11Include>
-	<TomlPPInclude>$(DepsPath)build\tomlplusplus\include</TomlPPInclude>
-	<DateInclude>$(DepsPath)build\date\include</DateInclude>
+	<CSMainDir>$(DepsPath)..\..\zmv-coreservices\</CSMainDir>
+	<CSIncludePath>$(CSMainDir)chimera_exec\include\</CSIncludePath>
+	<CSBuildDir>$(CSMainDir)build\$(Configuration)\$(PlatformName)-windows\</CSBuildDir>
+	<CSLibsPath>$(CSBuildDir)installed\lib\</CSLibsPath>
   </PropertyGroup>
-  
-  <Choose>
-	<When Condition="'$(AV_OmpRuntime)'=='Intel'">
-		<PropertyGroup>
-			<OmpInclude>$(DepsPath)libiomp\include\</OmpInclude>
-		</PropertyGroup>
-	</When>
-	<Otherwise>
-		<PropertyGroup>
-			<OmpInclude></OmpInclude>
-		</PropertyGroup>
-	</Otherwise>
-  </Choose>
-  
   <ItemDefinitionGroup />
   <ItemGroup>
   </ItemGroup>

@@ -24,6 +24,7 @@
     <ProjectGuid>{815af44d-95ca-4f03-9944-797622c97f1d}</ProjectGuid>
     <RootNamespace>cswrapper</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>cs_wrapper</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -90,6 +91,13 @@
       <AdditionalLibraryDirectories>$(CSLibsPath)</AdditionalLibraryDirectories>
       <AdditionalDependencies>chimera_exec.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(CSBuildDir)\build\chimera_exec\$(ConfigurationName)" "$(SolutionDir)$(Platform)\$(Configuration)\" /d /y
+xcopy "$(CSBuildDir)\installed\bin\LICENSEAPI.dll" "$(SolutionDir)$(Platform)\$(Configuration)\LICENSEAPI.dll*" /d /y
+xcopy "$(CSBuildDir)\installed\bin\libiomp5md.dll" "$(SolutionDir)$(Platform)\$(Configuration)\libiomp5md.dll*" /d /y
+xcopy "$(CSBuildDir)\installed\bin\dcruntime.dll" "$(SolutionDir)$(Platform)\$(Configuration)\dcruntime.dll*" /d /y
+xcopy "$(CSBuildDir)\installed\bin\boost_log_windows.cfg" "$(SolutionDir)$(Platform)\$(Configuration)\boost_log_windows.cfg*" /d /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -111,6 +119,13 @@
       <AdditionalLibraryDirectories>$(CSLibsPath)</AdditionalLibraryDirectories>
       <AdditionalDependencies>chimera_exec.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(CSBuildDir)\build\chimera_exec\$(ConfigurationName)" "$(SolutionDir)$(Platform)\$(Configuration)\" /d /y
+xcopy "$(CSBuildDir)\installed\bin\LICENSEAPI.dll" "$(SolutionDir)$(Platform)\$(Configuration)\LICENSEAPI.dll*" /d /y
+xcopy "$(CSBuildDir)\installed\bin\libiomp5md.dll" "$(SolutionDir)$(Platform)\$(Configuration)\libiomp5md.dll*" /d /y
+xcopy "$(CSBuildDir)\installed\bin\dcruntime.dll" "$(SolutionDir)$(Platform)\$(Configuration)\dcruntime.dll*" /d /y
+xcopy "$(CSBuildDir)\installed\bin\boost_log_windows.cfg" "$(SolutionDir)$(Platform)\$(Configuration)\boost_log_windows.cfg*" /d /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -128,6 +143,13 @@
       <AdditionalLibraryDirectories>$(CSLibsPath)</AdditionalLibraryDirectories>
       <AdditionalDependencies>chimera_exec.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(CSBuildDir)\build\chimera_exec\$(ConfigurationName)" "$(SolutionDir)$(Platform)\$(Configuration)\" /d /y
+xcopy "$(CSBuildDir)\installed\bin\LICENSEAPI.dll" "$(SolutionDir)$(Platform)\$(Configuration)\LICENSEAPI.dll*" /d /y
+xcopy "$(CSBuildDir)\installed\bin\libiomp5md.dll" "$(SolutionDir)$(Platform)\$(Configuration)\libiomp5md.dll*" /d /y
+xcopy "$(CSBuildDir)\installed\bin\dcruntime.dll" "$(SolutionDir)$(Platform)\$(Configuration)\dcruntime.dll*" /d /y
+xcopy "$(CSBuildDir)\installed\bin\boost_log_windows.cfg" "$(SolutionDir)$(Platform)\$(Configuration)\boost_log_windows.cfg*" /d /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -149,6 +171,13 @@
       <AdditionalLibraryDirectories>$(CSLibsPath)</AdditionalLibraryDirectories>
       <AdditionalDependencies>chimera_exec.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(CSBuildDir)\build\chimera_exec\$(ConfigurationName)" "$(SolutionDir)$(Platform)\$(Configuration)\" /d /y
+xcopy "$(CSBuildDir)\installed\bin\LICENSEAPI.dll" "$(SolutionDir)$(Platform)\$(Configuration)\LICENSEAPI.dll*" /d /y
+xcopy "$(CSBuildDir)\installed\bin\libiomp5md.dll" "$(SolutionDir)$(Platform)\$(Configuration)\libiomp5md.dll*" /d /y
+xcopy "$(CSBuildDir)\installed\bin\dcruntime.dll" "$(SolutionDir)$(Platform)\$(Configuration)\dcruntime.dll*" /d /y
+xcopy "$(CSBuildDir)\installed\bin\boost_log_windows.cfg" "$(SolutionDir)$(Platform)\$(Configuration)\boost_log_windows.cfg*" /d /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\MemoryLeaksDetector.cpp" />
@@ -163,6 +192,9 @@
     <ClInclude Include="src\Device.h" />
     <ClInclude Include="src\EventCallback.h" />
     <ClInclude Include="src\Events.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="nlohmann_json.natvis" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

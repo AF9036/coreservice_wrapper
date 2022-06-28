@@ -19,6 +19,13 @@ void Device::SetDescription(const nlohmann::json& newDescr)
 		std::cout << "Description updated of device: " << ip() << std::endl;
 
 		auto diff = nlohmann::json::diff(description, newDescr);
+		for (int i = 0; i < diff.size(); ++i)
+		{
+			std::string key = diff[i]["path"];
+			key = key.substr(1);
+			auto old_value = description[key];
+			diff[i]["OldValue"] = old_value;
+		}
 		std::cout << std::setw(2) << diff << std::endl;
 		description = newDescr;
 	}

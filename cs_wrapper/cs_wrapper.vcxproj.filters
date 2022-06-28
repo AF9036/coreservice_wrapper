@@ -27,7 +27,7 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\a.cpp">
+    <ClCompile Include="src\MemoryLeaksDetector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

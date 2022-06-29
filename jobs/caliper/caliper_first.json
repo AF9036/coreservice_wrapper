@@ -6,7 +6,7 @@
       "name": "CALIPER_TOOL",
       "configuration": {
         
-		"transition_type": "LIGHT_TO_DARK",
+		"polarity": "WHITE",
         "minimum_edge_magnitude": 5,
         "scan_width": 5,
         "scan_count": 20,

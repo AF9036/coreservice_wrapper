@@ -18,6 +18,9 @@
         <View Type="TextView">
           <Output Name="con_53efb46b_29c5_4478_abce_4b78854bba2d" Macro="Main" Start="Main" Instance="0" />
         </View>
+        <View Type="TextView">
+          <Output Name="con_d613cb55_0165_4c48_86fe_5f84838a1c25" Macro="Main" Start="Main" Instance="0" />
+        </View>
       </Views>
     </HSplit>
   </ViewSet>

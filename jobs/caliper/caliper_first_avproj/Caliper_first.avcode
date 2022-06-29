@@ -68,7 +68,7 @@ section PROCESS:
 		inOutlierCount: 0
 		inScanField.Axis: con_091e8675_3b98_4c2b_ab75_75b8c7242ec1
 		inScanField.Width: 20.000000
-		outObjectWidth: Nil
+		outObjectWidth: con_d613cb55_0165_4c48_86fe_5f84838a1c25
 		outSegment1: con_856368f2_2ced_433e_be4e_eb0f80fbdfae
 		outSegment2: con_68d35e31_8fbb_4bea_aea6_f4ef66a87024
 		outAlignedScanField: Nil

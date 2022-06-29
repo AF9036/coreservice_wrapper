@@ -1,0 +1,24 @@
+﻿<ViewSets Current="Custom1">
+  <ViewSet Name="Custom1">
+    <HSplit>
+      <Views Width="0.998" Height="0.998">
+        <View Type="ImageView">
+          <Output Name="con_4322f53c_0e65_443f_9d67_ddf50e1094b9" Macro="Main" Start="Main" Instance="0" />
+          <Input Name="inPoint" Index="0" Section="Process" Macro="CreateScanFieldAxis" Start="Main" Instance="0" />
+          <Output Name="con_ee45458b_5dbd_4c6c_847f_02099cbceb3b" Macro="CreateScanFieldAxis" Start="Main" Instance="0" />
+          <Output Name="con_f20530c8_fdd1_4d04_b62b_3f980996ec41" Macro="CreateScanFieldAxis" Start="Main" Instance="0" />
+          <Output Name="con_5692f34b_6e52_4979_8ebc_b8adf00e9931" Macro="CreateScanFieldAxis" Start="Main" Instance="0" />
+          <ViewState>
+            <ViewMode Mode="Manual" Scale="8" X="-511" Y="-676" />
+          </ViewState>
+        </View>
+        <View Type="TextView">
+          <Output Name="con_8702c0b6_0c4f_4d56_97cc_72d8d5121531" Macro="Main" Start="Main" Instance="0" />
+        </View>
+        <View Type="TextView">
+          <Output Name="con_53efb46b_29c5_4478_abce_4b78854bba2d" Macro="Main" Start="Main" Instance="0" />
+        </View>
+      </Views>
+    </HSplit>
+  </ViewSet>
+</ViewSets>

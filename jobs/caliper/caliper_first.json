@@ -1,0 +1,51 @@
+{
+  "nodes": {
+    "CALIPER_TOOL_9904": {
+      "id": "CALIPER_TOOL_9904",
+      "type": "TOOL",
+      "name": "CALIPER_TOOL",
+      "configuration": {
+        
+		"transition_type": "LIGHT_TO_DARK",
+        "minimum_edge_magnitude": 5,
+        "scan_width": 5,
+        "scan_count": 20,
+        "outlier_suppression": true,
+		"min_width": 10,
+		"max_width": 100,
+		
+		"category": "MEASUREMENT_TOOLS",
+        "roi": {
+          "type": "RECTANGLE",
+          "data": {
+            "width": 50,
+            "height": 50,
+            "angle": 90,
+            "rotation": 1.57079633,
+			"x": 110,
+			"y": 140
+          }
+        },
+        "enabled": true,
+		"included": true,
+        "invert": false,
+		"source_images": [
+          {
+            "type": "ACQUISITION",
+            "value": "bank_0"
+          }
+        ],
+        "timeout": -1,
+        "tool_timeout": 2000
+      }
+    }
+  },
+  "edges": {
+    "edge_1651495095471": {
+      "id": "edge_1651495095471",
+      "type": "NONE",
+      "source": "CALIPER_TOOL_9904",
+      "target": null
+    }
+  }
+}

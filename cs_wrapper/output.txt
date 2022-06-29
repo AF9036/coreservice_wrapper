@@ -1,0 +1,82 @@
+{
+    "image_sources": {},
+    "nodes": {
+        "CALIPER_TOOL_9904": {
+            "magnitudes": [
+                1.718544363975525,
+                0.8876126408576965,
+                1.1348888874053955,
+                -1.546440601348877,
+                1.549075722694397,
+                3.3145737648010254,
+                3.5173285007476807,
+                0.4635349214076996,
+                0.4748978614807129,
+                -0.4295927584171295,
+                0.3897168040275574,
+                -0.387380450963974,
+                0.44702088832855225,
+                -1.3975849151611328,
+                -4.485508441925049,
+                -4.310922145843506,
+                -1.0043405294418335,
+                0.8578587174415588,
+                1.3448628187179565,
+                1.2702966928482056
+            ],
+            "mid_point_1": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "mid_point_2": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "scaled_width": 0.0,
+            "source_images": [
+                {
+                    "type": "ACQUISITION",
+                    "value": "bank_0"
+                }
+            ],
+            "statistics": {
+                "standard": {
+                    "tool_time_average": 4,
+                    "tool_time_max": 4,
+                    "tool_time_min": 4,
+                    "total_fail": 0,
+                    "total_pass": 1
+                }
+            },
+            "status_message": "ChimeraMVCaliperTask tool completed succesfully.",
+            "success": true,
+            "time": 5,
+            "tool_order": 1,
+            "tool_status": "EXECUTION_SUCCESS",
+            "tool_time": 4,
+            "transformed_roi": {
+                "data": {
+                    "angle": 0.0,
+                    "height": 50.0,
+                    "rotation": 0.0,
+                    "width": 50.0,
+                    "x": 110.0,
+                    "y": 140.0
+                },
+                "type": "RECTANGLE"
+            },
+            "type": "CALIPER_TOOL",
+            "width": -1.0
+        }
+    },
+    "result": {
+        "success": true,
+        "time": 5
+    },
+    "result_image": {
+        "bank": 0,
+        "image": "",
+        "success": true,
+        "tool_id": "CALIPER_TOOL_9904"
+    }
+}

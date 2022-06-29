@@ -95,6 +95,11 @@ void CoreServiceManager::SetSubjectImage(const std::string& fileName)
 void CoreServiceManager::RunJob(const std::string& jsonFileName)
 {
 	std::ifstream t(jsonFileName);
+	if (!t.is_open()) {
+		std::cout << "Could not open job file: '" << jsonFileName << "'\n" ;
+		return;
+	}
+
 	std::stringstream buffer;
 	buffer << t.rdbuf();
 

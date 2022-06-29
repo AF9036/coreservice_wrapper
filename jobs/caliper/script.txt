@@ -1,0 +1,3 @@
+managed FS70-20346520180576
+subject_image "D:\Aurora\coreservice_wrapper\jobs\images\gasket\00000.png"
+run_job "D:\Aurora\coreservice_wrapper\jobs\caliper\caliper_first.json"

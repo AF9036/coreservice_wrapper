@@ -1,0 +1,119 @@
+//:USETYPE WORKERTASK
+public Main()
+{
+
+section ACQUIRE:
+	//:HIDDENPORT[inLoadAlphaChannel] TRUE
+	LoadImage
+	(
+		inFile: "..\\..\\images\\gasket\\00000.png"
+		inLoadAlphaChannel: False
+		outImage: con_4322f53c_0e65_443f_9d67_ddf50e1094b9
+	)
+
+section PROCESS:
+	CreateScanFieldAxis
+	(
+		inCenter:
+			Point2D
+			(
+				X: 110.000000
+				Y: 140.000000
+			)
+		inAngle: 90.000000
+		inWidth: 50.000000
+		inHeight: 50.000000
+		outPoint1: con_8702c0b6_0c4f_4d56_97cc_72d8d5121531
+		outPoint2: con_53efb46b_29c5_4478_abce_4b78854bba2d
+	)
+
+	MakeSegment
+	(
+		inPoint1: con_53efb46b_29c5_4478_abce_4b78854bba2d
+		inPoint2: con_8702c0b6_0c4f_4d56_97cc_72d8d5121531
+		outSegment: con_091e8675_3b98_4c2b_ab75_75b8c7242ec1
+	)
+
+	//:HIDDENPORT[inScanCount] TRUE
+	//:HIDDENPORT[inScanWidth] TRUE
+	//:HIDDENPORT[inImageInterpolation] TRUE
+	//:HIDDENPORT[inStripeScanParams] TRUE
+	//:HIDDENPORT[inMeasureMethod] TRUE
+	//:HIDDENPORT[inStripeSelection] TRUE
+	//:HIDDENPORT[inLocalBlindness] TRUE
+	//:HIDDENPORT[inOutlierSuppression] TRUE
+	//:HIDDENPORT[inOutlierCount] TRUE
+	MeasureObjectWidth
+	(
+		inImage: con_4322f53c_0e65_443f_9d67_ddf50e1094b9
+		inScanFieldAlignment: Nil
+		inScanCount: 5
+		inScanWidth: 5
+		inImageInterpolation: Bilinear
+		inStripeScanParams:
+			StripeScanParams
+			(
+				ProfileInterpolation: Quadratic4
+				SmoothingStdDev: 0.600000
+				MinMagnitude: 5.000000
+				MaxInnerEdgeMagnitude: Nil
+				StripePolarity: Dark
+				MinStripeWidth: 0.000000
+				MaxStripeWidth: Nil
+			)
+		inMeasureMethod: FittedSegmentDistance
+		inStripeSelection: Best
+		inLocalBlindness: Nil
+		inOutlierSuppression: Nil
+		inOutlierCount: 0
+		inScanField.Axis: con_091e8675_3b98_4c2b_ab75_75b8c7242ec1
+		inScanField.Width: 20.000000
+		outObjectWidth: Nil
+		outSegment1: con_856368f2_2ced_433e_be4e_eb0f80fbdfae
+		outSegment2: con_68d35e31_8fbb_4bea_aea6_f4ef66a87024
+		outAlignedScanField: Nil
+		outStripes: con_30c7188b_d21e_4e05_9c85_5822b3d4bd9b
+		outBrightnessProfiles: Nil
+		outResponseProfiles: Nil
+		diagScanSegments: con_cd521f6d_0b2d_413a_b2aa_4425659872bc
+	)
+}
+
+public CreateScanFieldAxis(Point2D inCenter, Real inAngle, Real inWidth, Real inHeight, Point2D outPoint1, Point2D outPoint2) step
+{
+	//:HIDDENPORT[inPointAnchor] TRUE
+	CreateRectangle
+	(
+		inPoint: inCenter
+		inPointAnchor: MiddleCenter
+		inAngle: inAngle
+		inWidth: inWidth
+		inHeight: inHeight
+		outRectangle: con_ee45458b_5dbd_4c6c_847f_02099cbceb3b
+	)
+
+	expression
+	{
+		Point2D inCenter
+		Real inAngle
+		Real inHeight
+		Real outX_T = "sin(inAngle) * 0.5 * inHeight"
+		Real outY_T = "cos(inAngle) * 0.5 * inHeight"
+		Point2D outPoint1 = "Point2D(inCenter.X - outX_T, inCenter.Y - outY_T)"
+		Point2D outPoint2 = "Point2D(inCenter.X + outX_T, inCenter.Y + outY_T)"
+	}
+	(
+		inCenter: inCenter
+		inAngle: inAngle
+		inHeight: inHeight
+		outX_T: Nil
+		outY_T: Nil
+		outPoint1: con_f20530c8_fdd1_4d04_b62b_3f980996ec41
+		outPoint2: con_5692f34b_6e52_4979_8ebc_b8adf00e9931
+	)
+
+	outPoint1 = con_f20530c8_fdd1_4d04_b62b_3f980996ec41
+
+	outPoint2 = con_5692f34b_6e52_4979_8ebc_b8adf00e9931
+}
+

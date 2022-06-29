@@ -1,0 +1,7 @@
+﻿<AuroraVisionProject Name="Caliper_first" Version="5.2.1011" Revision="90842" Product="Professional" StartUpProgramName="Main">
+  <Files>
+    <Program Path="Caliper_first.avcode" />
+    <View Path="Caliper_first.avview" />
+  </Files>
+  <AutoPreview>con_4322f53c_0e65_443f_9d67_ddf50e1094b9;con_cd521f6d_0b2d_413a_b2aa_4425659872bc;con_30c7188b_d21e_4e05_9c85_5822b3d4bd9b;con_68d35e31_8fbb_4bea_aea6_f4ef66a87024;con_856368f2_2ced_433e_be4e_eb0f80fbdfae</AutoPreview>
+</AuroraVisionProject>

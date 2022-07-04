@@ -38,3 +38,19 @@ void job_event(std::shared_ptr<event_t> evt)
 	out << std::setw(4) << data;
 	out.close();
 }
+
+void job_remote_response(std::shared_ptr<event_t> evt)
+{
+	auto manager = Manager();
+	if (!manager) return;
+
+	//manager->JobEvent(evt->octets);
+
+	std::cout << "Job remote response" << std::endl;
+	nlohmann::json data = nlohmann::json::parse(evt->octets);
+	//std::cout << std::setw(4) << data << std::endl;
+	std::cout << "remote job response" << std::endl;
+	std::ofstream out("output.txt");
+	out << std::setw(4) << data;
+	out.close();
+}

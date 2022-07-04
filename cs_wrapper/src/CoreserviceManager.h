@@ -3,6 +3,7 @@
 #include "Device.h"
 
 #include <memory>
+#include <mutex>
 #include <string>
 #include <map>
 #include <vector>
@@ -22,6 +23,7 @@ public:
 
 	void SetSubjectImage(const std::string& fileName);
 	void RunJob(const std::string& jsonFileName);
+	void DeployJob(const std::string& jsonFileName);
 
 	//events on managed device
 	void SetManagedEdit();
@@ -36,7 +38,8 @@ private:
 	void RegisterEvents();
 
 	//serial number -> device assignment
-	std::map<std::string, std::unique_ptr<Device>> devices;
+	std::mutex mtx;
+	std::map<std::string, std::shared_ptr<Device>> devices;
 	EventCallback callbacks;
 	Device* managedDev;
 };

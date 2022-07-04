@@ -67,6 +67,13 @@ void RunCommandLine(CoreServiceManager& manager)
 		},
 		"Run Job"
 	);
+	rootMenu->Insert(
+		"deploy",
+		[&](std::ostream& out, const std::string& job_json_file) {
+			manager.DeployJob(job_json_file);
+		},
+		"Run Job"
+	);
 	Cli cli(std::move(rootMenu));
 	
 	cli.ExitAction([](auto& out) { out << "Goodbye and thanks for all the fish.\n"; });

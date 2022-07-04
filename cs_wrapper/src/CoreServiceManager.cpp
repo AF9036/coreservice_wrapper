@@ -43,6 +43,8 @@ void CoreServiceManager::ListAllDevices()
 {
 	chimeraRtMgr_getAllDevices();
 	std::cout << "Get All Devices executed" << std::endl;
+	
+	std::lock_guard<std::mutex> lck(mtx);
 	for (auto& device : devices)
 	{
 		device.second->PrintBasciData();
@@ -59,25 +61,39 @@ void CoreServiceManager::ConnectByIp(const std::string& ip)
 
 void CoreServiceManager::ManageDevice(const std::string& id)
 {
-	auto dev = devices.find(id);
-	if (dev != devices.end())
+	std::shared_ptr<Device> device;
 	{
-		dev->second->ManageDevice();
-		managedDev = dev->second.get();
+		std::lock_guard<std::mutex> lck(mtx);
+		auto dev = devices.find(id);
+		if (dev == devices.end())
+			return;
+		device = dev->second;
 	}
+
+	device->ManageDevice();
+	managedDev = device.get();
 }
 
 void CoreServiceManager::UnManageDevice(const std::string& id)
 {
-	auto dev = devices.find(id);
+	std::shared_ptr<Device> device;
+	{
+		std::lock_guard<std::mutex> lck(mtx);
+		auto dev = devices.find(id);
+		if (dev == devices.end())
+			return;
+	}
+
 	int res = chimeraRtMgr_UnManageDevice(id.c_str());
 	std::cout << "Unmanage result: " << res << std::endl;
-	if (dev->second.get() == managedDev)
+
+	if (device.get() == managedDev)
 		managedDev = nullptr;
 }
 
 void CoreServiceManager::SetManagedEdit()
 {
+	std::unique_lock<std::mutex> lck(mtx);
 	managedDev->SetManagedEdit();
 }
 
@@ -106,6 +122,19 @@ void CoreServiceManager::RunJob(const std::string& jsonFileName)
 	chimeraRtMgr_RunJob(buffer.str().c_str());
 }
 
+void CoreServiceManager::DeployJob(const std::string& jsonFileName)
+{
+	std::ifstream t(jsonFileName);
+	if (!t.is_open()) {
+		std::cout << "Could not open job file: '" << jsonFileName << "'\n";
+		return;
+	}
+
+	std::stringstream buffer;
+	buffer << t.rdbuf();
+
+	chimeraRtMgr_DeployJob(buffer.str().c_str());
+}
 void CoreServiceManager::Capture()
 {
 	managedDev->Capture();
@@ -122,12 +151,15 @@ void CoreServiceManager::RegisterEvents()
 	chimeraRtMgr_register(device_event, event_type::evt_device);
 	chimeraRtMgr_register(capture_event, event_type::evt_image);
 	chimeraRtMgr_register(job_event, event_type::evt_job);
+	chimeraRtMgr_register(job_remote_response, event_type::evt_deployed_jobs);
 }
 
 void CoreServiceManager::DeviceEvent(const std::string& content)
 {
 	auto js = json::parse(content);
 	auto jsdevices = js["devices"];
+
+	std::lock_guard<std::mutex> lck(mtx);
 
 	std::set<std::string> to_remove;
 	std::set<std::string> present;
@@ -137,7 +169,7 @@ void CoreServiceManager::DeviceEvent(const std::string& content)
 		std::string id = jsdevice["id"];
 		present.insert(id);
 		if (auto dev = devices.find(id); dev == devices.end()) {
-			auto device = std::make_unique<Device>(jsdevice);
+			auto device = std::make_shared<Device>(jsdevice);
 			std::cout << "New device added: " << device->id() << "   " << device->ip() << std::endl;
 			devices[id] = std::move(device);
 		}
@@ -155,7 +187,7 @@ void CoreServiceManager::DeviceEvent(const std::string& content)
 
 	for (auto& id : to_remove)
 	{
-		std::cout << "Removing: " << id << std::endl;
+		std::cout << "Removing Device: " << id << std::endl;
 		devices.erase(id);
 	}
 

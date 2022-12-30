@@ -54,9 +54,8 @@ void CoreServiceManager::ListAllDevices()
 
 void CoreServiceManager::ConnectByIp(const std::string& ip)
 {
-	std::string response = chimeraRtMgr_ConnectDeviceByIP(ip.c_str()).get();
-	auto js = json::parse(response);
-	std::cout << std::setw(4) << js << "\n\n";
+	int retValue = chimeraRtMgr_ConnectDeviceByIP(ip.c_str());
+	std::cout << "Connect by ip response: " << retValue << "\n\n";
 }
 
 void CoreServiceManager::ManageDevice(const std::string& id)

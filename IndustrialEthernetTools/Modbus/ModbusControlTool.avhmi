@@ -1,0 +1,1175 @@
+﻿<HMI RelativeDPI="1">
+  <ClientSize>846, 712</ClientSize>
+  <Controls>
+    <TabControl>
+      <Dock>Fill</Dock>
+      <HeaderVisible>True</HeaderVisible>
+      <Location>0, 68</Location>
+      <Name>tabControl1</Name>
+      <Size>846, 644</Size>
+      <TabIndex>1</TabIndex>
+      <Controls>
+        <TabPage>
+          <Location>4, 22</Location>
+          <Name>tabPage2</Name>
+          <Padding>3, 3, 3, 3</Padding>
+          <Size>838, 618</Size>
+          <TabIndex>0</TabIndex>
+          <Text>General</Text>
+          <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+          <Controls>
+            <TextBox>
+              <Location>77, 23</Location>
+              <Name>textBox1</Name>
+              <Size>175, 20</Size>
+              <TabIndex>0</TabIndex>
+              <Text>172.16.90.194</Text>
+              <Binding>
+                <Output Property="Text" Variable="ext_con_c57964b8_ee25_45bb_a774_a5cd39eea368" />
+              </Binding>
+            </TextBox>
+            <Label>
+              <Location>15, 26</Location>
+              <Name>label20</Name>
+              <Size>100, 23</Size>
+              <TabIndex>1</TabIndex>
+              <Text>IP Address:</Text>
+            </Label>
+          </Controls>
+        </TabPage>
+        <TabPage>
+          <Location>4, 22</Location>
+          <Name>tabPage1</Name>
+          <Padding>3, 3, 3, 3</Padding>
+          <Size>838, 618</Size>
+          <TabIndex>1</TabIndex>
+          <Text>Command Registers</Text>
+          <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+          <Controls>
+            <CheckBox>
+              <Location>159, 233</Location>
+              <Name>checkBox15</Name>
+              <Size>131, 24</Size>
+              <TabIndex>30</TabIndex>
+              <Text>Reserved 6</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_f90ea664_5911_402e_af33_4cd9e67bcd83" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_54b7e2cd_0561_4338_bf6f_9031c635be79" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+            <CheckBox>
+              <Location>159, 205</Location>
+              <Name>checkBox14</Name>
+              <Size>131, 24</Size>
+              <TabIndex>27</TabIndex>
+              <Text>Reserved 5</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_a7c5e8de_6ad5_44cb_8608_1f0836e53917" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_c695bc10_da5f_4cbe_96b4_ff67ef7a4c62" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+            <CheckBox>
+              <Location>159, 177</Location>
+              <Name>checkBox13</Name>
+              <Size>131, 24</Size>
+              <TabIndex>23</TabIndex>
+              <Text>Reserved 4</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_492ee37b_9349_4d95_a184_a3889e2c158a" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_953c3122_8d87_4a68_8997_9c8847b51853" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+            <CheckBox>
+              <Location>159, 149</Location>
+              <Name>checkBox12</Name>
+              <Size>131, 24</Size>
+              <TabIndex>19</TabIndex>
+              <Text>Reserved 3</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_55d4d81a_57fa_4530_ac74_d60a33b3f526" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_e47a8d2b_4e79_413a_b761_ff1dec3eb300" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+            <CheckBox>
+              <Location>159, 93</Location>
+              <Name>checkBox11</Name>
+              <Size>131, 24</Size>
+              <TabIndex>10</TabIndex>
+              <Text>Reserved 1</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_9473fe79_8542_4dde_9d4d_bc5cfd354041" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_ef582e42_284e_4de4_ab37_d3659a03de60" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+            <CheckBox>
+              <Location>159, 65</Location>
+              <Name>checkBox10</Name>
+              <Size>131, 24</Size>
+              <TabIndex>5</TabIndex>
+              <Text>Reserved 0</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_f006153a_238e_4f88_871b_66c47a2c8928" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_9a2c2599_3126_46e6_b43c_b8e63886454b" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+            <ImpulseButton>
+              <Location>460, 403</Location>
+              <Name>impulseButton2</Name>
+              <Size>120, 28</Size>
+              <TabIndex>49</TabIndex>
+              <Text>Read</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Event Name="Click" Handler="ReadCommandRegisters" />
+              </Binding>
+            </ImpulseButton>
+            <ImpulseButton>
+              <Location>334, 403</Location>
+              <Name>impulseButton1</Name>
+              <Size>120, 28</Size>
+              <TabIndex>48</TabIndex>
+              <Text>Send</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Event Name="Click" Handler="WriteCommandRegisters" />
+              </Binding>
+            </ImpulseButton>
+            <NumericUpDown>
+              <Location>460, 359</Location>
+              <Maximum>255</Maximum>
+              <Name>numericUpDown14</Name>
+              <Size>120, 20</Size>
+              <TabIndex>46</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="DisplayCommandRegisters" Variable="con_5cd27d99_2bee_4230_a46d_5719bf5bae82" VariantIndex="0" />
+                <Output Property="Value" Variable="ext_con_a8f044a4_7b95_4ac9_8d09_a0772e313af3" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>336, 361</Location>
+              <Name>label19</Name>
+              <Size>133, 23</Size>
+              <TabIndex>47</TabIndex>
+              <Text>15 (Reserved):</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>460, 333</Location>
+              <Maximum>255</Maximum>
+              <Name>numericUpDown13</Name>
+              <Size>120, 20</Size>
+              <TabIndex>42</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="DisplayCommandRegisters" Variable="con_ce22740b_698d_4bbe_b6f4_a0367ebf7133" VariantIndex="0" />
+                <Output Property="Value" Variable="ext_con_c2e71610_02f9_44ab_bdbb_f5d3e48c8447" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>336, 335</Location>
+              <Name>label18</Name>
+              <Size>133, 23</Size>
+              <TabIndex>43</TabIndex>
+              <Text>14 (Reserved):</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>460, 307</Location>
+              <Maximum>255</Maximum>
+              <Name>numericUpDown12</Name>
+              <Size>120, 20</Size>
+              <TabIndex>38</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="DisplayCommandRegisters" Variable="con_d269175a_2ec1_41ec_8522_8d42826798c3" VariantIndex="0" />
+                <Output Property="Value" Variable="ext_con_a740341c_7f44_4a79_b9fe_98a5754c9a64" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>336, 309</Location>
+              <Name>label17</Name>
+              <Size>133, 23</Size>
+              <TabIndex>39</TabIndex>
+              <Text>13 (Reserved):</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>460, 281</Location>
+              <Maximum>255</Maximum>
+              <Name>numericUpDown11</Name>
+              <Size>120, 20</Size>
+              <TabIndex>36</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="DisplayCommandRegisters" Variable="con_5f04d2d6_e2a1_42c4_93d0_2d8123036d13" VariantIndex="0" />
+                <Output Property="Value" Variable="ext_con_0823fb4b_9e3b_425e_aaa8_a71594beb5dc" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>336, 283</Location>
+              <Name>label16</Name>
+              <Size>133, 23</Size>
+              <TabIndex>37</TabIndex>
+              <Text>12 (Reserved):</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>460, 253</Location>
+              <Maximum>255</Maximum>
+              <Name>numericUpDown10</Name>
+              <Size>120, 20</Size>
+              <TabIndex>32</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="DisplayCommandRegisters" Variable="con_adf63bc9_01c7_4589_b491_740705f95680" VariantIndex="0" />
+                <Output Property="Value" Variable="ext_con_50570569_f84b_4c63_a992_93f130565b60" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>336, 255</Location>
+              <Name>label15</Name>
+              <Size>133, 23</Size>
+              <TabIndex>33</TabIndex>
+              <Text>11 (Reserved):</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>460, 227</Location>
+              <Maximum>255</Maximum>
+              <Name>numericUpDown9</Name>
+              <Size>120, 20</Size>
+              <TabIndex>28</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="DisplayCommandRegisters" Variable="con_4fa3d6da_7d03_473f_9c3b_5352a3e5de26" VariantIndex="0" />
+                <Output Property="Value" Variable="ext_con_4dd1ed2f_cf83_41fe_9bda_2c6fa38ed497" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>336, 229</Location>
+              <Name>label14</Name>
+              <Size>133, 23</Size>
+              <TabIndex>29</TabIndex>
+              <Text>10 (Reserved):</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>460, 201</Location>
+              <Maximum>65535</Maximum>
+              <Name>numericUpDown8</Name>
+              <Size>120, 20</Size>
+              <TabIndex>24</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="DisplayCommandRegisters" Variable="con_2f3a7d68_fcee_4ed9_969c_ff13b05b9669" VariantIndex="0" />
+                <Output Property="Value" Variable="ext_con_afa105e5_591c_46ac_ae74_6920f78dcd22" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>335, 203</Location>
+              <Name>label13</Name>
+              <Size>133, 23</Size>
+              <TabIndex>25</TabIndex>
+              <Text>8-9 (Seq Number):</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>460, 173</Location>
+              <Maximum>65535</Maximum>
+              <Name>numericUpDown7</Name>
+              <Size>120, 20</Size>
+              <TabIndex>20</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="DisplayCommandRegisters" Variable="con_dadbce35_847c_4e60_a4c2_4f406725b5bb" VariantIndex="0" />
+                <Output Property="Value" Variable="ext_con_4839e78f_e475_4b8f_bc1c_9319ab6d1333" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>335, 175</Location>
+              <Name>label12</Name>
+              <Size>133, 23</Size>
+              <TabIndex>22</TabIndex>
+              <Text>6-7 (Slot Number):</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>460, 145</Location>
+              <Maximum>255</Maximum>
+              <Name>numericUpDown6</Name>
+              <Size>120, 20</Size>
+              <TabIndex>18</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="DisplayCommandRegisters" Variable="con_0f1a2772_5ab9_4f97_975d_beb1e02138c1" VariantIndex="0" />
+                <Output Property="Value" Variable="ext_con_033a5823_a140_49b1_812b_20669b5dfcf2" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>336, 145</Location>
+              <Name>label11</Name>
+              <Size>133, 23</Size>
+              <TabIndex>17</TabIndex>
+              <Text>5 (Echo):</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>460, 119</Location>
+              <Maximum>255</Maximum>
+              <Name>numericUpDown5</Name>
+              <Size>120, 20</Size>
+              <TabIndex>14</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="DisplayCommandRegisters" Variable="con_5c8764a1_47d1_4737_a246_9f5e2b385f92" VariantIndex="0" />
+                <Output Property="Value" Variable="ext_con_4b1aecd9_e74a_4c8c_a171_3eaf0d5db09c" />
+              </Binding>
+            </NumericUpDown>
+            <NumericUpDown>
+              <Location>159, 342</Location>
+              <Maximum>255</Maximum>
+              <Name>numericUpDown4</Name>
+              <Size>120, 20</Size>
+              <TabIndex>45</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="InvalidateCommandValues" Variable="con_e32ff645_40bd_4031_abbf_4fe1338c5e9e" VariantIndex="0" />
+                <Output Property="Value" Variable="ext_con_7d4f07d7_8f7d_4ad1_8e27_94bbb5d86dca" />
+                <Event Name="ValueChanged" Handler="CommandValueChanged" />
+              </Binding>
+            </NumericUpDown>
+            <NumericUpDown>
+              <Location>26, 342</Location>
+              <Maximum>255</Maximum>
+              <Name>numericUpDown3</Name>
+              <Size>120, 20</Size>
+              <TabIndex>44</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="InvalidateCommandValues" Variable="con_0eb5a1d9_a73d_4d66_9bfd_c514da921d3b" VariantIndex="0" />
+                <Output Property="Value" Variable="ext_con_00c14edd_e9f2_44db_b661_36509ac0e461" />
+                <Event Name="ValueChanged" Handler="CommandValueChanged" />
+              </Binding>
+            </NumericUpDown>
+            <NumericUpDown>
+              <Location>460, 92</Location>
+              <Maximum>255</Maximum>
+              <Name>numericUpDown2</Name>
+              <Size>120, 20</Size>
+              <TabIndex>9</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="DisplayCommandRegisters" Variable="con_5171d629_65ca_44ea_9470_7a78d7f531ed" VariantIndex="0" />
+                <Output Property="Value" Variable="ext_con_5a4c0150_bf99_4a7e_b98a_4085b2686bae" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Dock>Top</Dock>
+              <Location>3, 3</Location>
+              <Name>label10</Name>
+              <Size>832, 23</Size>
+              <TabIndex>0</TabIndex>
+              <Text>Command registers starting from location: 1000</Text>
+              <TextAlign>MiddleCenter</TextAlign>
+            </Label>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>335, 36</Location>
+              <Name>label9</Name>
+              <Size>100, 23</Size>
+              <TabIndex>3</TabIndex>
+              <Text>Byte(s)</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>460, 65</Location>
+              <Maximum>255</Maximum>
+              <Name>numericUpDown1</Name>
+              <Size>120, 20</Size>
+              <TabIndex>6</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="DisplayCommandRegisters" Variable="con_f89dea1c_5a3f_4a7b_bdb8_41d1dab85fa2" VariantIndex="0" />
+                <Output Property="Value" Variable="ext_con_ee248d41_292a_4a1d_a10e_55262d071596" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>336, 119</Location>
+              <Name>label8</Name>
+              <Size>133, 23</Size>
+              <TabIndex>13</TabIndex>
+              <Text>4 (Echo):</Text>
+            </Label>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>336, 93</Location>
+              <Name>label7</Name>
+              <Size>133, 23</Size>
+              <TabIndex>11</TabIndex>
+              <Text>3 (Reserved):</Text>
+            </Label>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>336, 67</Location>
+              <Name>label6</Name>
+              <Size>133, 23</Size>
+              <TabIndex>7</TabIndex>
+              <Text>2 (Reserved):</Text>
+            </Label>
+            <Label>
+              <Location>159, 311</Location>
+              <Name>label5</Name>
+              <Size>100, 23</Size>
+              <TabIndex>40</TabIndex>
+              <Text>Byte 1 Value:</Text>
+            </Label>
+            <Label>
+              <Location>26, 315</Location>
+              <Name>label4</Name>
+              <Size>100, 23</Size>
+              <TabIndex>41</TabIndex>
+              <Text>Byte 0 Value:</Text>
+            </Label>
+            <CheckBox>
+              <Location>159, 261</Location>
+              <Name>checkBox9</Name>
+              <Size>104, 24</Size>
+              <TabIndex>34</TabIndex>
+              <Text>Reset Counters</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_bd66fb01_28ff_4303_b12a_11c336c54ed1" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_0caa955a_96eb_4aec_83cb_85162dee1a77" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+            <CheckBox>
+              <Location>159, 121</Location>
+              <Name>checkBox8</Name>
+              <Size>131, 24</Size>
+              <TabIndex>15</TabIndex>
+              <Text>User Data Control</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_b955afd7_39fd_46fe_b816_ecebb7e51734" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_ef110a09_8a58_44fe_ad23_e3c11971d2e0" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>159, 36</Location>
+              <Name>label3</Name>
+              <Size>100, 23</Size>
+              <TabIndex>2</TabIndex>
+              <Text>Byte 1</Text>
+            </Label>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>26, 36</Location>
+              <Name>label2</Name>
+              <Size>100, 23</Size>
+              <TabIndex>1</TabIndex>
+              <Text>Byte 0</Text>
+            </Label>
+            <CheckBox>
+              <Location>26, 145</Location>
+              <Name>checkBox3</Name>
+              <Size>104, 24</Size>
+              <TabIndex>16</TabIndex>
+              <Text>Trigger Ack</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_4be138bc_782d_4afc_8193_7a05b5061344" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_861cb8cd_98b0_4b86_ad39_b33d34d668db" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+            <CheckBox>
+              <Location>26, 265</Location>
+              <Name>checkBox7</Name>
+              <Size>143, 24</Size>
+              <TabIndex>35</TabIndex>
+              <Text>Error Ack</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_4f863ef3_a421_4e10_ae28_5fbe8cb60f2d" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_a5ec69b8_a365_48c2_8eef_66cd6f696ef8" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+            <CheckBox>
+              <Location>26, 65</Location>
+              <Name>checkBoxJobControl</Name>
+              <Size>104, 24</Size>
+              <TabIndex>4</TabIndex>
+              <Text>Job Control</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_ec7ea7a5_a289_4909_b68a_901b23904302" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_7dc526a0_318b_40ae_b09f_426c24ec2898" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+            <CheckBox>
+              <Location>26, 235</Location>
+              <Name>checkBox6</Name>
+              <Size>143, 24</Size>
+              <TabIndex>31</TabIndex>
+              <Text>Error Buffer Enable</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_fc0e4964_26c2_408e_a822_7840014904b2" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_68946d19_cf9f_4022_a419_9d496985a380" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+            <CheckBox>
+              <Location>26, 90</Location>
+              <Name>checkBox1</Name>
+              <Size>104, 24</Size>
+              <TabIndex>8</TabIndex>
+              <Text>Trigger Enable</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_886cd308_1979_4366_9fb6_c2fe6c19ef5b" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_0aae8278_6be9_4837_9764_516d9d0c0d26" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+            <CheckBox>
+              <Location>26, 205</Location>
+              <Name>checkBox5</Name>
+              <Size>143, 24</Size>
+              <TabIndex>26</TabIndex>
+              <Text>Result Buffer Control</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_880bd5ea_b54e_4466_97ff_747534ffca03" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_356dad60_e049_4472_afc3_424ae24da289" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+            <CheckBox>
+              <Location>26, 115</Location>
+              <Name>checkBox2</Name>
+              <Size>104, 24</Size>
+              <TabIndex>12</TabIndex>
+              <Text>Trigger</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_7cf4ad47_84b8_4899_b726_7b3de4a79b11" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_c387d157_1657_434d_8127_86519b36fb59" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+            <CheckBox>
+              <Location>26, 175</Location>
+              <Name>checkBox4</Name>
+              <Size>104, 24</Size>
+              <TabIndex>21</TabIndex>
+              <Text>Job Slot Control</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Checked" Macro="DisplayCommandRegisterFlags" Variable="con_93cd31ea_8dd2_4b05_a32c_a6d7ed49f8b7" VariantIndex="0" />
+                <Output Property="Checked" Variable="ext_con_5ef68f92_9c53_4115_8671_065376930c19" />
+                <Event Name="CheckedChanged" Handler="CommandCheckBoxChanged" />
+              </Binding>
+            </CheckBox>
+          </Controls>
+        </TabPage>
+        <TabPage>
+          <Location>4, 22</Location>
+          <Name>tabPage3</Name>
+          <Padding>3, 3, 3, 3</Padding>
+          <Size>838, 618</Size>
+          <TabIndex>2</TabIndex>
+          <Text>Response Registers</Text>
+          <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+          <Controls>
+            <NumericUpDown>
+              <Enabled>False</Enabled>
+              <Location>282, 493</Location>
+              <Maximum>1000000</Maximum>
+              <Name>numericUpDown26</Name>
+              <Size>72, 20</Size>
+              <TabIndex>30</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="UpdateResponseRegisters" Variable="con_e7948a86_1249_4eec_becd_b4c90332664d" VariantIndex="0" />
+              </Binding>
+            </NumericUpDown>
+            <NumericUpDown>
+              <Enabled>False</Enabled>
+              <Location>282, 467</Location>
+              <Maximum>1000000</Maximum>
+              <Name>numericUpDown27</Name>
+              <Size>72, 20</Size>
+              <TabIndex>26</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="UpdateResponseRegisters" Variable="con_cfceede3_6dab_44db_84fd_61dc7f9eddfd" VariantIndex="0" />
+              </Binding>
+            </NumericUpDown>
+            <NumericUpDown>
+              <Enabled>False</Enabled>
+              <Location>282, 442</Location>
+              <Maximum>1000000</Maximum>
+              <Name>numericUpDown28</Name>
+              <Size>72, 20</Size>
+              <TabIndex>20</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="UpdateResponseRegisters" Variable="con_bd4e899e_4035_41d6_a778_2a275060e7d5" VariantIndex="0" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>211, 490</Location>
+              <Name>label33</Name>
+              <Size>65, 23</Size>
+              <TabIndex>28</TabIndex>
+              <Text>Value:</Text>
+            </Label>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>211, 467</Location>
+              <Name>label34</Name>
+              <Size>71, 23</Size>
+              <TabIndex>25</TabIndex>
+              <Text>Value Hi:</Text>
+            </Label>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>211, 444</Location>
+              <Name>label35</Name>
+              <Size>65, 23</Size>
+              <TabIndex>22</TabIndex>
+              <Text>Value Lo:</Text>
+            </Label>
+            <NumericUpDown>
+              <Enabled>False</Enabled>
+              <Location>108, 493</Location>
+              <Maximum>1000000</Maximum>
+              <Name>numericUpDown25</Name>
+              <Size>72, 20</Size>
+              <TabIndex>29</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="UpdateResponseRegisters" Variable="con_2329cd8f_417e_4000_9b58_9e3245abde62" VariantIndex="0" />
+              </Binding>
+            </NumericUpDown>
+            <NumericUpDown>
+              <Enabled>False</Enabled>
+              <Location>108, 467</Location>
+              <Maximum>1000000</Maximum>
+              <Name>numericUpDown24</Name>
+              <Size>72, 20</Size>
+              <TabIndex>24</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="UpdateResponseRegisters" Variable="con_a20a8ecd_d5cd_4b9b_a087_e8549f98970e" VariantIndex="0" />
+              </Binding>
+            </NumericUpDown>
+            <NumericUpDown>
+              <Enabled>False</Enabled>
+              <Location>108, 442</Location>
+              <Maximum>1000000</Maximum>
+              <Name>numericUpDown23</Name>
+              <Size>72, 20</Size>
+              <TabIndex>19</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="UpdateResponseRegisters" Variable="con_767d3a94_e713_48d4_8002_a3d635e2f337" VariantIndex="0" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>37, 490</Location>
+              <Name>label32</Name>
+              <Size>65, 23</Size>
+              <TabIndex>27</TabIndex>
+              <Text>Value:</Text>
+            </Label>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>37, 467</Location>
+              <Name>label31</Name>
+              <Size>71, 23</Size>
+              <TabIndex>23</TabIndex>
+              <Text>Value Hi:</Text>
+            </Label>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>37, 444</Location>
+              <Name>label30</Name>
+              <Size>65, 23</Size>
+              <TabIndex>21</TabIndex>
+              <Text>Value Lo:</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>605, 369</Location>
+              <Maximum>60</Maximum>
+              <Minimum>1</Minimum>
+              <Name>numericUpDown22</Name>
+              <Size>120, 20</Size>
+              <TabIndex>17</TabIndex>
+              <Value>5</Value>
+              <Binding>
+                <Output Property="Value" Variable="ext_con_35edf925_8025_4a42_9e30_322deee59719" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Location>499, 371</Location>
+              <Name>label29</Name>
+              <Size>100, 23</Size>
+              <TabIndex>18</TabIndex>
+              <Text>Update Interval [s]</Text>
+            </Label>
+            <NumericUpDown>
+              <Enabled>False</Enabled>
+              <Location>605, 194</Location>
+              <Maximum>1000000</Maximum>
+              <Name>numericUpDown21</Name>
+              <Size>120, 20</Size>
+              <TabIndex>15</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="UpdateResponseRegisters" Variable="con_b49b2c91_3bba_4581_bc57_46e14e3803b5" VariantIndex="0" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>440, 196</Location>
+              <Name>label28</Name>
+              <Size>173, 23</Size>
+              <TabIndex>16</TabIndex>
+              <Text>14-15 (Results Job Slot Nr):</Text>
+            </Label>
+            <NumericUpDown>
+              <Enabled>False</Enabled>
+              <Location>605, 168</Location>
+              <Maximum>1000000</Maximum>
+              <Name>numericUpDown20</Name>
+              <Size>120, 20</Size>
+              <TabIndex>13</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="UpdateResponseRegisters" Variable="con_837d08c6_a5d9_4fb8_9bbf_bd46df4fa19d" VariantIndex="0" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>440, 170</Location>
+              <Name>label27</Name>
+              <Size>133, 23</Size>
+              <TabIndex>14</TabIndex>
+              <Text>13 (Reserved):</Text>
+            </Label>
+            <NumericUpDown>
+              <Enabled>False</Enabled>
+              <Location>605, 142</Location>
+              <Maximum>1000000</Maximum>
+              <Name>numericUpDown19</Name>
+              <Size>120, 20</Size>
+              <TabIndex>11</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="UpdateResponseRegisters" Variable="con_ab281d0b_fde0_4c8d_950e_200e11c4f4ae" VariantIndex="0" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>440, 144</Location>
+              <Name>label26</Name>
+              <Size>159, 23</Size>
+              <TabIndex>12</TabIndex>
+              <Text>12 (Result Queue Count):</Text>
+            </Label>
+            <NumericUpDown>
+              <Enabled>False</Enabled>
+              <Location>605, 116</Location>
+              <Maximum>1000000</Maximum>
+              <Name>numericUpDown18</Name>
+              <Size>120, 20</Size>
+              <TabIndex>9</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="UpdateResponseRegisters" Variable="con_68d10e0d_8491_452a_8065_b9649a703959" VariantIndex="0" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>440, 120</Location>
+              <Name>label25</Name>
+              <Size>133, 23</Size>
+              <TabIndex>10</TabIndex>
+              <Text>8-11 (Error Code):</Text>
+            </Label>
+            <NumericUpDown>
+              <Enabled>False</Enabled>
+              <Location>605, 90</Location>
+              <Maximum>1000000</Maximum>
+              <Name>numericUpDown17</Name>
+              <Size>120, 20</Size>
+              <TabIndex>7</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="UpdateResponseRegisters" Variable="con_55fdf8c1_b608_47d8_9ee6_f00872bde5ee" VariantIndex="0" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>439, 94</Location>
+              <Name>label24</Name>
+              <Size>133, 23</Size>
+              <TabIndex>8</TabIndex>
+              <Text>6-7 (Slot Number):</Text>
+            </Label>
+            <Label>
+              <Dock>Top</Dock>
+              <Location>3, 3</Location>
+              <Name>label23</Name>
+              <Size>832, 23</Size>
+              <TabIndex>0</TabIndex>
+              <Text>Response registers starting from location: 2000</Text>
+              <TextAlign>MiddleCenter</TextAlign>
+            </Label>
+            <NumericUpDown>
+              <Enabled>False</Enabled>
+              <Location>605, 64</Location>
+              <Maximum>1000000</Maximum>
+              <Name>numericUpDown15</Name>
+              <Size>120, 20</Size>
+              <TabIndex>5</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="UpdateResponseRegisters" Variable="con_5c114ac6_06c5_4a19_bbae_db7aa02f1b10" VariantIndex="0" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>440, 66</Location>
+              <Name>label21</Name>
+              <Size>133, 23</Size>
+              <TabIndex>6</TabIndex>
+              <Text>5 (Echo):</Text>
+            </Label>
+            <NumericUpDown>
+              <Enabled>False</Enabled>
+              <Location>605, 38</Location>
+              <Maximum>1000000</Maximum>
+              <Name>numericUpDown16</Name>
+              <Size>120, 20</Size>
+              <TabIndex>3</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Input Property="Value" Macro="UpdateResponseRegisters" Variable="con_3e2f3c9f_eb89_4f3f_9d21_d7d5f5ffc06f" VariantIndex="0" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>440, 40</Location>
+              <Name>label22</Name>
+              <Size>133, 23</Size>
+              <TabIndex>4</TabIndex>
+              <Text>4 (Echo):</Text>
+            </Label>
+            <BoolIndicatorBoard>
+              <Location>212, 38</Location>
+              <Name>boolIndicatorBoard2</Name>
+              <Size>182, 398</Size>
+              <TabIndex>2</TabIndex>
+              <Variables>
+                <ListContent>
+                  <Item type="System.String">GPIO 0</Item>
+                  <Item type="System.String">GPIO 1</Item>
+                  <Item type="System.String">GPIO 2</Item>
+                  <Item type="System.String">GPIO 3</Item>
+                  <Item type="System.String">GPIO 4</Item>
+                  <Item type="System.String">GPIO 5</Item>
+                  <Item type="System.String">GPIO 6</Item>
+                  <Item type="System.String">GPIO 7</Item>
+                  <Item type="System.String">GPIO 8</Item>
+                  <Item type="System.String">GPIO 9</Item>
+                  <Item type="System.String">Reserved</Item>
+                  <Item type="System.String">Reserved</Item>
+                  <Item type="System.String">Reserved</Item>
+                  <Item type="System.String">Reserved</Item>
+                  <Item type="System.String">Reserved</Item>
+                  <Item type="System.String">Reserved</Item>
+                </ListContent>
+              </Variables>
+              <Binding>
+                <Input Property="Values" Macro="UpdateResponseRegisters" Variable="con_d6e7af2b_6e55_4684_a8df_1501d061039a" VariantIndex="0" />
+              </Binding>
+            </BoolIndicatorBoard>
+            <BoolIndicatorBoard>
+              <Location>36, 38</Location>
+              <Name>boolIndicatorBoard1</Name>
+              <Size>158, 398</Size>
+              <TabIndex>1</TabIndex>
+              <Variables>
+                <ListContent>
+                  <Item type="System.String">Job Status</Item>
+                  <Item type="System.String">Trigger Ready</Item>
+                  <Item type="System.String">Trigger Status</Item>
+                  <Item type="System.String">Results Available</Item>
+                  <Item type="System.String">Results Fragment</Item>
+                  <Item type="System.String">Results Overflow</Item>
+                  <Item type="System.String">Error Overflow</Item>
+                  <Item type="System.String">Error Available</Item>
+                  <Item type="System.String">Job Pas</Item>
+                  <Item type="System.String">Job Fail</Item>
+                  <Item type="System.String">Reserved</Item>
+                  <Item type="System.String">Reserved</Item>
+                  <Item type="System.String">Reserved</Item>
+                  <Item type="System.String">Reserved</Item>
+                  <Item type="System.String">Reserved</Item>
+                  <Item type="System.String">Reserved</Item>
+                </ListContent>
+              </Variables>
+              <Binding>
+                <Input Property="Values" Macro="UpdateResponseRegisters" Variable="con_c00f80e9_fa30_4c75_8b34_bcd11d0bae3a" VariantIndex="0" />
+              </Binding>
+            </BoolIndicatorBoard>
+          </Controls>
+        </TabPage>
+        <TabPage>
+          <Location>4, 22</Location>
+          <Name>tabPage4</Name>
+          <Padding>3, 3, 3, 3</Padding>
+          <Size>838, 618</Size>
+          <TabIndex>3</TabIndex>
+          <Text>Command Data</Text>
+          <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+          <Controls>
+            <Label>
+              <ForeColor>Red</ForeColor>
+              <Location>432, 65</Location>
+              <Name>label47</Name>
+              <Size>211, 42</Size>
+              <TabIndex>3</TabIndex>
+              <Text>Entry Mode not supported yet !</Text>
+            </Label>
+            <ImpulseButton>
+              <Location>121, 379</Location>
+              <Name>impulseButton3</Name>
+              <Size>120, 28</Size>
+              <TabIndex>20</TabIndex>
+              <Text>Send</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Event Name="Click" Handler="WriteCommandData" />
+              </Binding>
+            </ImpulseButton>
+            <TextBox>
+              <Location>121, 257</Location>
+              <Multiline>True</Multiline>
+              <Name>textBox2</Name>
+              <Size>249, 106</Size>
+              <TabIndex>19</TabIndex>
+              <Text>Value</Text>
+              <Binding>
+                <Output Property="Text" Variable="ext_con_badff2a8_7064_4914_990c_d64b5da30f83" />
+              </Binding>
+            </TextBox>
+            <Label>
+              <Location>15, 257</Location>
+              <Name>label46</Name>
+              <Size>100, 23</Size>
+              <TabIndex>18</TabIndex>
+              <Text>User Data:</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>121, 223</Location>
+              <Maximum>10000000</Maximum>
+              <Name>numericUpDown35</Name>
+              <Size>120, 20</Size>
+              <TabIndex>16</TabIndex>
+              <Value>1</Value>
+              <Binding>
+                <Output Property="Value" Variable="ext_con_5f9bed85_b0ca_4375_a89c_d4ad704180cd" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Location>15, 225</Location>
+              <Name>label45</Name>
+              <Size>100, 23</Size>
+              <TabIndex>17</TabIndex>
+              <Text>2 (Count 1-Raw):</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>121, 200</Location>
+              <Maximum>10000000</Maximum>
+              <Name>numericUpDown34</Name>
+              <Size>120, 20</Size>
+              <TabIndex>14</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Output Property="Value" Variable="ext_con_24ca6ddd_41dd_4809_8113_1e3c674fc9d3" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Location>15, 202</Location>
+              <Name>label44</Name>
+              <Size>100, 23</Size>
+              <TabIndex>15</TabIndex>
+              <Text>2 (Reserved):</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>121, 177</Location>
+              <Maximum>10000000</Maximum>
+              <Name>numericUpDown33</Name>
+              <Size>120, 20</Size>
+              <TabIndex>12</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Output Property="Value" Variable="ext_con_a6f0ee0f_fe92_49cf_943c_a8d353157809" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Location>15, 179</Location>
+              <Name>label43</Name>
+              <Size>100, 23</Size>
+              <TabIndex>13</TabIndex>
+              <Text>1 (Reserved):</Text>
+            </Label>
+            <Label>
+              <Location>121, 156</Location>
+              <Name>label42</Name>
+              <Size>120, 23</Size>
+              <TabIndex>11</TabIndex>
+              <Text>0 - Entry 1 - Raw</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>121, 133</Location>
+              <Maximum>10000000</Maximum>
+              <Name>numericUpDown32</Name>
+              <Size>120, 20</Size>
+              <TabIndex>9</TabIndex>
+              <Value>1</Value>
+              <Binding>
+                <Output Property="Value" Variable="ext_con_343c7fcf_2527_40b5_bead_0bccd56f1011" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Location>15, 135</Location>
+              <Name>label41</Name>
+              <Size>100, 23</Size>
+              <TabIndex>10</TabIndex>
+              <Text>1 (Mode):</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>121, 110</Location>
+              <Maximum>10000000</Maximum>
+              <Name>numericUpDown31</Name>
+              <Size>120, 20</Size>
+              <TabIndex>7</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Output Property="Value" Variable="ext_con_692a29b0_7c0a_4bf7_abb5_ecda9b3c2619" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Location>15, 112</Location>
+              <Name>label40</Name>
+              <Size>100, 23</Size>
+              <TabIndex>8</TabIndex>
+              <Text>4 (Reserved):</Text>
+            </Label>
+            <NumericUpDown>
+              <AutoEnabledNegate Provider="enabledManager1">True</AutoEnabledNegate>
+              <Location>121, 87</Location>
+              <Maximum>65535</Maximum>
+              <Name>numericUpDown30</Name>
+              <Size>120, 20</Size>
+              <TabIndex>5</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Output Property="Value" Variable="ext_con_c5d89865_6138_49db_ae8c_aea08d8c3d88" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Location>15, 89</Location>
+              <Name>label39</Name>
+              <Size>100, 23</Size>
+              <TabIndex>6</TabIndex>
+              <Text>2 (Total length):</Text>
+            </Label>
+            <NumericUpDown>
+              <Location>121, 64</Location>
+              <Maximum>10000000</Maximum>
+              <Name>numericUpDown29</Name>
+              <Size>120, 20</Size>
+              <TabIndex>2</TabIndex>
+              <Value>0</Value>
+              <Binding>
+                <Output Property="Value" Variable="ext_con_c3195be0_e060_4cdc_9b91_9acb2f136e81" />
+              </Binding>
+            </NumericUpDown>
+            <Label>
+              <Location>15, 66</Location>
+              <Name>label38</Name>
+              <Size>100, 23</Size>
+              <TabIndex>4</TabIndex>
+              <Text>4 (Seq number):</Text>
+            </Label>
+            <Label>
+              <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
+              <Location>15, 39</Location>
+              <Name>label37</Name>
+              <Size>100, 23</Size>
+              <TabIndex>1</TabIndex>
+              <Text>Byte(s)</Text>
+            </Label>
+            <Label>
+              <Dock>Top</Dock>
+              <Location>3, 3</Location>
+              <Name>label36</Name>
+              <Size>832, 23</Size>
+              <TabIndex>0</TabIndex>
+              <Text>Command user data address: 1100</Text>
+              <TextAlign>MiddleCenter</TextAlign>
+            </Label>
+          </Controls>
+        </TabPage>
+      </Controls>
+    </TabControl>
+    <Panel>
+      <Dock>Top</Dock>
+      <Location>0, 0</Location>
+      <Name>panel1</Name>
+      <Size>846, 68</Size>
+      <TabIndex>0</TabIndex>
+      <Controls>
+        <Label>
+          <Dock>Fill</Dock>
+          <Font>Microsoft Sans Serif, 15.75pt</Font>
+          <Location>0, 0</Location>
+          <Name>label1</Name>
+          <Size>846, 68</Size>
+          <TabIndex>0</TabIndex>
+          <Text>Aurora Industrial Ethernet</Text>
+          <TextAlign>MiddleCenter</TextAlign>
+        </Label>
+      </Controls>
+    </Panel>
+    <EnabledManager Name="enabledManager1">
+      <TrayLocation>17, 17</TrayLocation>
+    </EnabledManager>
+  </Controls>
+</HMI>

@@ -1,0 +1,1048 @@
+extern public String ext_con_c57964b8_ee25_45bb_a774_a5cd39eea368 = "172.16.90.194"
+extern public Bool ext_con_54b7e2cd_0561_4338_bf6f_9031c635be79 = False
+extern public Bool ext_con_c695bc10_da5f_4cbe_96b4_ff67ef7a4c62 = False
+extern public Bool ext_con_953c3122_8d87_4a68_8997_9c8847b51853 = False
+extern public Bool ext_con_e47a8d2b_4e79_413a_b761_ff1dec3eb300 = False
+extern public Bool ext_con_ef582e42_284e_4de4_ab37_d3659a03de60 = False
+extern public Bool ext_con_9a2c2599_3126_46e6_b43c_b8e63886454b = False
+extern public Integer ext_con_a8f044a4_7b95_4ac9_8d09_a0772e313af3 = 0
+extern public Integer ext_con_c2e71610_02f9_44ab_bdbb_f5d3e48c8447 = 0
+extern public Integer ext_con_a740341c_7f44_4a79_b9fe_98a5754c9a64 = 0
+extern public Integer ext_con_0823fb4b_9e3b_425e_aaa8_a71594beb5dc = 0
+extern public Integer ext_con_50570569_f84b_4c63_a992_93f130565b60 = 0
+extern public Integer ext_con_4dd1ed2f_cf83_41fe_9bda_2c6fa38ed497 = 0
+extern public Integer ext_con_afa105e5_591c_46ac_ae74_6920f78dcd22 = 0
+extern public Integer ext_con_4839e78f_e475_4b8f_bc1c_9319ab6d1333 = 0
+extern public Integer ext_con_033a5823_a140_49b1_812b_20669b5dfcf2 = 0
+extern public Integer ext_con_4b1aecd9_e74a_4c8c_a171_3eaf0d5db09c = 0
+extern public Integer ext_con_7d4f07d7_8f7d_4ad1_8e27_94bbb5d86dca = 0
+extern public Integer ext_con_00c14edd_e9f2_44db_b661_36509ac0e461 = 0
+extern public Integer ext_con_5a4c0150_bf99_4a7e_b98a_4085b2686bae = 0
+extern public Integer ext_con_ee248d41_292a_4a1d_a10e_55262d071596 = 0
+extern public Bool ext_con_0caa955a_96eb_4aec_83cb_85162dee1a77 = False
+extern public Bool ext_con_ef110a09_8a58_44fe_ad23_e3c11971d2e0 = False
+extern public Bool ext_con_861cb8cd_98b0_4b86_ad39_b33d34d668db = False
+extern public Bool ext_con_a5ec69b8_a365_48c2_8eef_66cd6f696ef8 = False
+extern public Bool ext_con_7dc526a0_318b_40ae_b09f_426c24ec2898 = False
+extern public Bool ext_con_68946d19_cf9f_4022_a419_9d496985a380 = False
+extern public Bool ext_con_0aae8278_6be9_4837_9764_516d9d0c0d26 = False
+extern public Bool ext_con_356dad60_e049_4472_afc3_424ae24da289 = False
+extern public Bool ext_con_c387d157_1657_434d_8127_86519b36fb59 = False
+extern public Bool ext_con_5ef68f92_9c53_4115_8671_065376930c19 = False
+extern public Integer ext_con_35edf925_8025_4a42_9e30_322deee59719 = 5
+extern public SocketId? Socket
+extern public Integer ext_con_c3195be0_e060_4cdc_9b91_9acb2f136e81 = 0
+extern public Integer ext_con_c5d89865_6138_49db_ae8c_aea08d8c3d88 = 0
+extern public Integer ext_con_692a29b0_7c0a_4bf7_abb5_ecda9b3c2619 = 0
+extern public Integer ext_con_343c7fcf_2527_40b5_bead_0bccd56f1011 = 1
+extern public Integer ext_con_a6f0ee0f_fe92_49cf_943c_a8d353157809 = 0
+extern public Integer ext_con_24ca6ddd_41dd_4809_8113_1e3c674fc9d3 = 0
+extern public Integer ext_con_5f9bed85_b0ca_4375_a89c_d4ad704180cd = 1
+extern public String ext_con_badff2a8_7064_4914_990c_d64b5da30f83 = "Value"
+
+//:SECTIONSVISIBILITY Visible
+//:USETYPE WORKERTASK
+public Main()
+{
+
+section INITIALIZE:
+	//:HIDDENPORT[inTimeout] TRUE
+	//:HIDDENPORT[inKeepAliveTime] TRUE
+	ModbusTCP_Connect
+	(
+		inHost: ext_con_c57964b8_ee25_45bb_a774_a5cd39eea368
+		inPort: 502
+		inTimeout: 1000
+		inKeepAliveTime: Nil
+		outSocket: con_b698248e_3e68_47fb_bb34_528e265d8cdc
+	)
+
+	parameters write
+	{
+		inputs: Socket
+	}
+	(
+		inSocket: con_b698248e_3e68_47fb_bb34_528e265d8cdc
+	)
+
+section PROCESS:
+	UpdateResponseRegisters
+	(
+	)
+
+	//:HIDDENPORT[inD] TRUE
+	//:HIDDENPORT[inE] TRUE
+	//:HIDDENPORT[inF] TRUE
+	//:HIDDENPORT[inG] TRUE
+	//:HIDDENPORT[inH] TRUE
+	MultiplyIntegers
+	(
+		inA: ext_con_35edf925_8025_4a42_9e30_322deee59719
+		inB: 1000
+		inC: 1
+		inD: 1
+		inE: 1
+		inF: 1
+		inG: 1
+		inH: 1
+		outProduct: con_5f408eee_669c_4b7a_9d68_351590c517dc
+	)
+
+	Loop
+	(
+		inShouldLoop: True
+		inDelay: con_5f408eee_669c_4b7a_9d68_351590c517dc
+	)
+}
+
+public InvalidateCommandValues() step
+{
+	FormatBitsToByte
+	(
+		inBit0: ext_con_7dc526a0_318b_40ae_b09f_426c24ec2898
+		inBit1: ext_con_0aae8278_6be9_4837_9764_516d9d0c0d26
+		inBit2: ext_con_c387d157_1657_434d_8127_86519b36fb59
+		inBit3: ext_con_861cb8cd_98b0_4b86_ad39_b33d34d668db
+		inBit4: ext_con_5ef68f92_9c53_4115_8671_065376930c19
+		inBit5: ext_con_356dad60_e049_4472_afc3_424ae24da289
+		inBit6: ext_con_68946d19_cf9f_4022_a419_9d496985a380
+		inBit7: ext_con_a5ec69b8_a365_48c2_8eef_66cd6f696ef8
+		outValue: con_0eb5a1d9_a73d_4d66_9bfd_c514da921d3b
+	)
+
+	FormatBitsToByte
+	(
+		inBit0: ext_con_9a2c2599_3126_46e6_b43c_b8e63886454b
+		inBit1: ext_con_ef582e42_284e_4de4_ab37_d3659a03de60
+		inBit2: ext_con_ef110a09_8a58_44fe_ad23_e3c11971d2e0
+		inBit3: ext_con_e47a8d2b_4e79_413a_b761_ff1dec3eb300
+		inBit4: ext_con_953c3122_8d87_4a68_8997_9c8847b51853
+		inBit5: ext_con_c695bc10_da5f_4cbe_96b4_ff67ef7a4c62
+		inBit6: ext_con_54b7e2cd_0561_4338_bf6f_9031c635be79
+		inBit7: ext_con_0caa955a_96eb_4aec_83cb_85162dee1a77
+		outValue: con_e32ff645_40bd_4031_abbf_4fe1338c5e9e
+	)
+}
+
+public FormatBitsToByte(Bool inBit0, Bool inBit1, Bool inBit2, Bool inBit3, Bool inBit4, Bool inBit5, Bool inBit6, Bool inBit7, Integer outValue) step
+{
+	//:EXPLICITTYPE[outValue] true
+	expression
+	{
+		Bool inBit0
+		Bool inBit1
+		Bool inBit2
+		Bool inBit3
+		Bool inBit4
+		Bool inBit5
+		Bool inBit6
+		Bool inBit7
+		Integer outValue = "\r\n((inBit0 ? 1 : 0) << 0) |\r\n((inBit1 ? 1 : 0) << 1) |\r\n((inBit2 ? 1 : 0) << 2) |\r\n((inBit3 ? 1 : 0) << 3) |\r\n((inBit4 ? 1 : 0) << 4) |\r\n((inBit5 ? 1 : 0) << 5) |\r\n((inBit6 ? 1 : 0) << 6) |\r\n((inBit7 ? 1 : 0) << 7)"
+	}
+	(
+		inBit0: inBit0
+		inBit1: inBit1
+		inBit2: inBit2
+		inBit3: inBit3
+		inBit4: inBit4
+		inBit5: inBit5
+		inBit6: inBit6
+		inBit7: inBit7
+		outValue: con_b0da7699_ab53_4c51_a800_d810e12e5005
+	)
+
+	outValue = con_b0da7699_ab53_4c51_a800_d810e12e5005
+}
+
+//:USETYPE EVENTHANDLER
+public CommandCheckBoxChanged()
+{
+	InvalidateCommandValues
+	(
+	)
+}
+
+//:USETYPE EVENTHANDLER
+public ReadCommandRegisters()
+{
+	UpdateCommandRegisters
+	(
+	)
+}
+
+public FormatByteToBits(Integer inValue, Bool outBit0, Bool outBit1, Bool outBit2, Bool outBit3, Bool outBit4, Bool outBit5, Bool outBit6, Bool outBit7, BoolArray outArray) step
+{
+	expression
+	{
+		Integer inValue
+		Bool outBit0 = "(inValue & (1 << 0)) <> 0"
+		Bool outBit1 = "(inValue & (1 << 1)) <> 0"
+		Bool outBit2 = "(inValue & (1 << 2)) <> 0"
+		Bool outBit3 = "(inValue & (1 << 3)) <> 0"
+		Bool outBit4 = "(inValue & (1 << 4)) <> 0"
+		Bool outBit5 = "(inValue & (1 << 5)) <> 0"
+		Bool outBit6 = "(inValue & (1 << 6)) <> 0"
+		Bool outBit7 = "(inValue & (1 << 7)) <> 0"
+		BoolArray outArray = "{outBit0, outBit1, outBit2, outBit3, outBit4, outBit5, outBit6, outBit7}"
+	}
+	(
+		inValue: inValue
+		outBit0: con_f5f33453_3492_4337_b1e2_8a0bd3300cb8
+		outBit1: con_af689b1f_a366_47fe_8fe7_c57ec3c3c5c0
+		outBit2: con_65dc3dd5_00aa_42c0_8360_60128a456780
+		outBit3: con_199b5082_01f8_4343_8612_b34dbbbc0916
+		outBit4: con_d916a1f8_8664_461e_b459_00bd49cdb069
+		outBit5: con_5303903c_12da_4312_846d_140b9961114a
+		outBit6: con_ba23d11a_45eb_4181_9275_b39686fde43b
+		outBit7: con_3e51b65a_f440_41c4_94c9_182f96ff34b7
+		outArray: con_7ccadce6_3075_415d_a3db_37473d0b982e
+	)
+
+	outBit0 = con_f5f33453_3492_4337_b1e2_8a0bd3300cb8
+
+	outBit1 = con_af689b1f_a366_47fe_8fe7_c57ec3c3c5c0
+
+	outBit2 = con_65dc3dd5_00aa_42c0_8360_60128a456780
+
+	outBit3 = con_199b5082_01f8_4343_8612_b34dbbbc0916
+
+	outBit4 = con_d916a1f8_8664_461e_b459_00bd49cdb069
+
+	outBit5 = con_5303903c_12da_4312_846d_140b9961114a
+
+	outBit6 = con_ba23d11a_45eb_4181_9275_b39686fde43b
+
+	outBit7 = con_3e51b65a_f440_41c4_94c9_182f96ff34b7
+
+	outArray = con_7ccadce6_3075_415d_a3db_37473d0b982e
+}
+
+public UpdateCommandRegisters() step
+{
+	CopyObject<SocketId>
+	(
+		inObject: Socket
+		outObject: con_02bcf552_4484_4cd2_8423_31ecef813ef3
+	)
+
+	//:HIDDENPORT[inTimeout] TRUE
+	//:HIDDENPORT[inUnitID] TRUE
+	//:HIDDENPORT[inStartingAddress] TRUE
+	//:HIDDENPORT[inCount] TRUE
+	ModbusTCP_ReadMultipleRegisters_AsByteBuffer
+	(
+		inSocket: con_02bcf552_4484_4cd2_8423_31ecef813ef3
+		inTimeout: Nil
+		inUnitID: 1
+		inStartingAddress: 1000
+		inCount: 8
+		outData: con_90f1eefa_084f_4ba2_af65_4250d4428474
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_90f1eefa_084f_4ba2_af65_4250d4428474
+		inRegister: 0
+		outValue_Lo: con_b1421cd9_7fd3_45ab_9792_0c81a483f007
+		outValue_Hi: con_e2c5e429_35a4_4a68_b103_de64ad549535
+		outValue16Bit: Nil
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_90f1eefa_084f_4ba2_af65_4250d4428474
+		inRegister: 1
+		outValue_Lo: con_71982463_9278_45ea_bb2f_850e5787ac7d
+		outValue_Hi: con_82891a47_111d_4459_819f_3e2f9dee1fbf
+		outValue16Bit: Nil
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_90f1eefa_084f_4ba2_af65_4250d4428474
+		inRegister: 2
+		outValue_Lo: con_a3898525_a3e0_4667_8e71_6cea9465a07a
+		outValue_Hi: con_914a67c1_ffb9_4773_9b47_c4db7a5eb925
+		outValue16Bit: Nil
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_90f1eefa_084f_4ba2_af65_4250d4428474
+		inRegister: 3
+		outValue_Lo: Nil
+		outValue_Hi: Nil
+		outValue16Bit: con_9bf77332_5246_40e0_9da6_46e9f10fbbbc
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_90f1eefa_084f_4ba2_af65_4250d4428474
+		inRegister: 4
+		outValue_Lo: Nil
+		outValue_Hi: Nil
+		outValue16Bit: con_2b40d6a0_f987_4cd0_b579_c18dc7291344
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_90f1eefa_084f_4ba2_af65_4250d4428474
+		inRegister: 5
+		outValue_Lo: con_dbd6e3d3_b683_4540_bb20_26a343890615
+		outValue_Hi: con_42dc2138_794c_4dd2_b90f_6b294d0fb217
+		outValue16Bit: Nil
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_90f1eefa_084f_4ba2_af65_4250d4428474
+		inRegister: 6
+		outValue_Lo: con_d3c4053a_994a_4e96_b32a_6d1923473076
+		outValue_Hi: con_d7767683_a7ad_419b_bb17_d09eafdbb4ee
+		outValue16Bit: Nil
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_90f1eefa_084f_4ba2_af65_4250d4428474
+		inRegister: 7
+		outValue_Lo: con_e0e8dc6a_cdbd_4ad8_a889_47080eb82154
+		outValue_Hi: con_86639520_fb73_4440_bba2_8cd5d5ac4ede
+		outValue16Bit: Nil
+	)
+
+	DisplayCommandRegisters
+	(
+		inByte0: con_b1421cd9_7fd3_45ab_9792_0c81a483f007
+		inByte1: con_e2c5e429_35a4_4a68_b103_de64ad549535
+		inByte2: con_71982463_9278_45ea_bb2f_850e5787ac7d
+		inByte3: con_82891a47_111d_4459_819f_3e2f9dee1fbf
+		inByte4: con_a3898525_a3e0_4667_8e71_6cea9465a07a
+		inByte5: con_914a67c1_ffb9_4773_9b47_c4db7a5eb925
+		inByte6_7: con_9bf77332_5246_40e0_9da6_46e9f10fbbbc
+		inByte8_9: con_2b40d6a0_f987_4cd0_b579_c18dc7291344
+		inByte10: con_dbd6e3d3_b683_4540_bb20_26a343890615
+		inByte11: con_42dc2138_794c_4dd2_b90f_6b294d0fb217
+		inByte12: con_d3c4053a_994a_4e96_b32a_6d1923473076
+		inByte13: con_d7767683_a7ad_419b_bb17_d09eafdbb4ee
+		inByte14: con_e0e8dc6a_cdbd_4ad8_a889_47080eb82154
+		inByte15: con_86639520_fb73_4440_bba2_8cd5d5ac4ede
+	)
+}
+
+public DisplayCommandRegisters(Integer inByte0, Integer inByte1, Integer inByte2, Integer inByte3, Integer inByte4, Integer inByte5, Integer inByte6_7, Integer inByte8_9, Integer inByte10, Integer inByte11, Integer inByte12, Integer inByte13, Integer inByte14, Integer inByte15) step
+{
+	DisplayCommandRegisterFlags
+	(
+		inByte0: inByte0
+		inByte1: inByte1
+	)
+
+	//:HIDDENPORT[outoutByte11] TRUE
+	//:HIDDENPORT[outoutByte12] TRUE
+	//:HIDDENPORT[outoutByte13] TRUE
+	//:HIDDENPORT[outoutByte14] TRUE
+	//:HIDDENPORT[outoutByte15] TRUE
+	expression
+	{
+		Integer inByte2
+		Integer inByte3
+		Integer inByte4
+		Integer inByte5
+		Integer inByte6_7
+		Integer inByte8_9
+		Integer inByte10
+		Integer inByte11
+		Integer inByte12
+		Integer inByte13
+		Integer inByte14
+		Integer inByte15
+		Integer outByte2 = "inByte2"
+		Integer outByte3 = "inByte3"
+		Integer outByte4 = "inByte4"
+		Integer outByte5 = "inByte5"
+		Integer outByte6_7 = "inByte6_7"
+		Integer outByte8_9 = "inByte8_9"
+		Integer outoutByte10 = "inByte10"
+		Integer outoutByte11 = "inByte11"
+		Integer outoutByte12 = "inByte12"
+		Integer outoutByte13 = "inByte13"
+		Integer outoutByte14 = "inByte14"
+		Integer outoutByte15 = "inByte15"
+	}
+	(
+		inByte2: inByte2
+		inByte3: inByte3
+		inByte4: inByte4
+		inByte5: inByte5
+		inByte6_7: inByte6_7
+		inByte8_9: inByte8_9
+		inByte10: inByte10
+		inByte11: inByte11
+		inByte12: inByte12
+		inByte13: inByte13
+		inByte14: inByte14
+		inByte15: inByte15
+		outByte2: con_f89dea1c_5a3f_4a7b_bdb8_41d1dab85fa2
+		outByte3: con_5171d629_65ca_44ea_9470_7a78d7f531ed
+		outByte4: con_5c8764a1_47d1_4737_a246_9f5e2b385f92
+		outByte5: con_0f1a2772_5ab9_4f97_975d_beb1e02138c1
+		outByte6_7: con_dadbce35_847c_4e60_a4c2_4f406725b5bb
+		outByte8_9: con_2f3a7d68_fcee_4ed9_969c_ff13b05b9669
+		outoutByte10: con_4fa3d6da_7d03_473f_9c3b_5352a3e5de26
+		outoutByte11: con_adf63bc9_01c7_4589_b491_740705f95680
+		outoutByte12: con_5f04d2d6_e2a1_42c4_93d0_2d8123036d13
+		outoutByte13: con_d269175a_2ec1_41ec_8522_8d42826798c3
+		outoutByte14: con_ce22740b_698d_4bbe_b6f4_a0367ebf7133
+		outoutByte15: con_5cd27d99_2bee_4230_a46d_5719bf5bae82
+	)
+}
+
+public ExtractModbusRegisterValues(ByteBuffer inBuffer, Integer inRegister, Integer outValue_Lo, Integer outValue_Hi, Integer outValue16Bit) step
+{
+	//:HIDDENPORT[inD] TRUE
+	//:HIDDENPORT[inE] TRUE
+	//:HIDDENPORT[inF] TRUE
+	//:HIDDENPORT[inG] TRUE
+	//:HIDDENPORT[inH] TRUE
+	MultiplyIntegers
+	(
+		inA: inRegister
+		inB: 2
+		inC: 1
+		inD: 1
+		inE: 1
+		inF: 1
+		inG: 1
+		inH: 1
+		outProduct: con_6314b38a_c3a8_40c4_91fc_3e5b5625bc3c
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: inBuffer
+		inOffset: con_6314b38a_c3a8_40c4_91fc_3e5b5625bc3c
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_9832b497_e78b_420f_829e_6dd77ebdfce7
+		outOffset: Nil
+	)
+
+	expression
+	{
+		Integer inValue
+		Integer outValue_Lo = "inValue & 0xFF"
+		Integer outValue_Hi = "(inValue >> 8) & 0xFF"
+	}
+	(
+		inValue: con_9832b497_e78b_420f_829e_6dd77ebdfce7
+		outValue_Lo: con_60f5bfe5_34c8_489f_84cd_88501141805b
+		outValue_Hi: con_dbac69e1_2d59_4a0c_a454_99b968ee0b59
+	)
+
+	outValue_Lo = con_60f5bfe5_34c8_489f_84cd_88501141805b
+
+	outValue_Hi = con_dbac69e1_2d59_4a0c_a454_99b968ee0b59
+
+	outValue16Bit = con_9832b497_e78b_420f_829e_6dd77ebdfce7
+}
+
+//:USETYPE EVENTHANDLER
+public WriteCommandRegisters()
+{
+	AppendModbusRegister
+	(
+		inValueLo: ext_con_00c14edd_e9f2_44db_b661_36509ac0e461
+		inValueHi: ext_con_7d4f07d7_8f7d_4ad1_8e27_94bbb5d86dca
+		inBuffer: ByteBuffer()
+		outBuffer: con_1070f7be_a7d8_41cd_a8a9_f71a22362066
+	)
+
+	//2-3 (reserved)
+	AppendModbusRegister
+	(
+		inValueLo: ext_con_ee248d41_292a_4a1d_a10e_55262d071596
+		inValueHi: ext_con_5a4c0150_bf99_4a7e_b98a_4085b2686bae
+		inBuffer: con_1070f7be_a7d8_41cd_a8a9_f71a22362066
+		outBuffer: con_36b71d98_37a5_49ca_946b_14f73bb12654
+	)
+
+	//(4-5) Echo
+	AppendModbusRegister
+	(
+		inValueLo: ext_con_4b1aecd9_e74a_4c8c_a171_3eaf0d5db09c
+		inValueHi: ext_con_033a5823_a140_49b1_812b_20669b5dfcf2
+		inBuffer: con_36b71d98_37a5_49ca_946b_14f73bb12654
+		outBuffer: con_b2c0b067_52f2_4d67_9dad_f915148e782b
+	)
+
+	//(6-7)  Slot number
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerToBuffer
+	(
+		inBuffer: con_b2c0b067_52f2_4d67_9dad_f915148e782b
+		inOffset: Nil
+		inValue: ext_con_4839e78f_e475_4b8f_bc1c_9319ab6d1333
+		inFormat: Unsigned_16Bit_BigEndian
+		outBuffer: con_564fab6f_7a99_42cb_9a9b_f66ea07fcf84
+	)
+
+	//(8-9)  Seq number
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerToBuffer
+	(
+		inBuffer: con_564fab6f_7a99_42cb_9a9b_f66ea07fcf84
+		inOffset: Nil
+		inValue: ext_con_afa105e5_591c_46ac_ae74_6920f78dcd22
+		inFormat: Unsigned_16Bit_BigEndian
+		outBuffer: con_670b5ca1_560d_4a5d_9fb5_91c6c1f0a188
+	)
+
+	//(10-11) Reserved
+	AppendModbusRegister
+	(
+		inValueLo: ext_con_4dd1ed2f_cf83_41fe_9bda_2c6fa38ed497
+		inValueHi: ext_con_50570569_f84b_4c63_a992_93f130565b60
+		inBuffer: con_670b5ca1_560d_4a5d_9fb5_91c6c1f0a188
+		outBuffer: con_d76797f1_3ed2_4463_ae7b_85cafa8b6c84
+	)
+
+	//(12-13) Reserved
+	AppendModbusRegister
+	(
+		inValueLo: ext_con_0823fb4b_9e3b_425e_aaa8_a71594beb5dc
+		inValueHi: ext_con_a740341c_7f44_4a79_b9fe_98a5754c9a64
+		inBuffer: con_d76797f1_3ed2_4463_ae7b_85cafa8b6c84
+		outBuffer: con_a8aafa37_41fc_4d4b_8601_53e86d5763c0
+	)
+
+	//(14-15) Reserved
+	AppendModbusRegister
+	(
+		inValueLo: ext_con_c2e71610_02f9_44ab_bdbb_f5d3e48c8447
+		inValueHi: ext_con_a8f044a4_7b95_4ac9_8d09_a0772e313af3
+		inBuffer: con_a8aafa37_41fc_4d4b_8601_53e86d5763c0
+		outBuffer: con_9b34900e_ea99_4d99_9cd2_5a884227a662
+	)
+
+	CopyObject<SocketId>
+	(
+		inObject: Socket
+		outObject: con_9fa8592c_4377_411f_8553_a0f3aaff4325
+	)
+
+	//:HIDDENPORT[inTimeout] TRUE
+	//:HIDDENPORT[inUnitID] TRUE
+	//:HIDDENPORT[inStartingAddress] TRUE
+	ModbusTCP_WriteMultipleRegisters_AsByteBuffer
+	(
+		inSocket: con_9fa8592c_4377_411f_8553_a0f3aaff4325
+		inTimeout: Nil
+		inUnitID: 1
+		inStartingAddress: 1000
+		inBuffer: con_9b34900e_ea99_4d99_9cd2_5a884227a662
+	)
+}
+
+public AppendModbusRegister(Integer inValueLo, Integer inValueHi, ByteBuffer inBuffer, ByteBuffer outBuffer) step
+{
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerToBuffer
+	(
+		inBuffer: ByteBuffer()
+		inOffset: Nil
+		inValue: inValueLo
+		inFormat: Unsigned_8Bit
+		outBuffer: con_fd9b7112_9f66_4154_ae26_668b1daa2a3a
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerToBuffer
+	(
+		inBuffer: con_fd9b7112_9f66_4154_ae26_668b1daa2a3a
+		inOffset: Nil
+		inValue: inValueHi
+		inFormat: Unsigned_8Bit
+		outBuffer: con_2cf5fd87_bd01_4757_a49b_9d21cfa57b04
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: con_2cf5fd87_bd01_4757_a49b_9d21cfa57b04
+		inOffset: 0
+		inFormat: Unsigned_16Bit_LittleEndian
+		inCheckRange: True
+		outValue: con_efa2f761_1168_483f_91a7_45f2b79529b1
+		outOffset: Nil
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerToBuffer
+	(
+		inBuffer: inBuffer
+		inOffset: Nil
+		inValue: con_efa2f761_1168_483f_91a7_45f2b79529b1
+		inFormat: Unsigned_16Bit_BigEndian
+		outBuffer: con_a997f31f_a56e_4817_aa45_ad33327b4d77
+	)
+
+	outBuffer = con_a997f31f_a56e_4817_aa45_ad33327b4d77
+}
+
+//:USETYPE EVENTHANDLER
+public CommandValueChanged()
+{
+	DisplayCommandRegisterFlags
+	(
+		inByte0: ext_con_00c14edd_e9f2_44db_b661_36509ac0e461
+		inByte1: ext_con_7d4f07d7_8f7d_4ad1_8e27_94bbb5d86dca
+	)
+}
+
+public DisplayCommandRegisterFlags(Integer inByte0, Integer inByte1) step
+{
+	FormatByteToBits
+	(
+		inValue: inByte0
+		outBit0: con_ec7ea7a5_a289_4909_b68a_901b23904302
+		outBit1: con_886cd308_1979_4366_9fb6_c2fe6c19ef5b
+		outBit2: con_7cf4ad47_84b8_4899_b726_7b3de4a79b11
+		outBit3: con_4be138bc_782d_4afc_8193_7a05b5061344
+		outBit4: con_93cd31ea_8dd2_4b05_a32c_a6d7ed49f8b7
+		outBit5: con_880bd5ea_b54e_4466_97ff_747534ffca03
+		outBit6: con_fc0e4964_26c2_408e_a822_7840014904b2
+		outBit7: con_4f863ef3_a421_4e10_ae28_5fbe8cb60f2d
+		outArray: Nil
+	)
+
+	FormatByteToBits
+	(
+		inValue: inByte1
+		outBit0: con_f006153a_238e_4f88_871b_66c47a2c8928
+		outBit1: con_9473fe79_8542_4dde_9d4d_bc5cfd354041
+		outBit2: con_b955afd7_39fd_46fe_b816_ecebb7e51734
+		outBit3: con_55d4d81a_57fa_4530_ac74_d60a33b3f526
+		outBit4: con_492ee37b_9349_4d95_a184_a3889e2c158a
+		outBit5: con_a7c5e8de_6ad5_44cb_8608_1f0836e53917
+		outBit6: con_f90ea664_5911_402e_af33_4cd9e67bcd83
+		outBit7: con_bd66fb01_28ff_4303_b12a_11c336c54ed1
+		outArray: Nil
+	)
+}
+
+public UpdateResponseRegisters() step
+{
+	//:HIDDENPORT[inTimeout] TRUE
+	//:HIDDENPORT[inUnitID] TRUE
+	//:HIDDENPORT[inStartingAddress] TRUE
+	//:HIDDENPORT[inCount] TRUE
+	ModbusTCP_ReadMultipleRegisters_AsByteBuffer
+	(
+		inSocket: Socket
+		inTimeout: Nil
+		inUnitID: 1
+		inStartingAddress: 2000
+		inCount: 8
+		outData: con_466bc727_0b55_4e1d_bf80_c1c2cdc9b494
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_466bc727_0b55_4e1d_bf80_c1c2cdc9b494
+		inRegister: 0
+		outValue_Lo: con_767d3a94_e713_48d4_8002_a3d635e2f337
+		outValue_Hi: con_a20a8ecd_d5cd_4b9b_a087_e8549f98970e
+		outValue16Bit: con_2329cd8f_417e_4000_9b58_9e3245abde62
+	)
+
+	//:HIDDENPORT[outBit0] TRUE
+	//:HIDDENPORT[outBit1] TRUE
+	//:HIDDENPORT[outBit2] TRUE
+	//:HIDDENPORT[outBit3] TRUE
+	//:HIDDENPORT[outBit4] TRUE
+	//:HIDDENPORT[outBit5] TRUE
+	//:HIDDENPORT[outBit6] TRUE
+	//:HIDDENPORT[outBit7] TRUE
+	FormatByteToBits
+	(
+		inValue: con_767d3a94_e713_48d4_8002_a3d635e2f337
+		outBit0: Nil
+		outBit1: Nil
+		outBit2: Nil
+		outBit3: Nil
+		outBit4: Nil
+		outBit5: Nil
+		outBit6: Nil
+		outBit7: Nil
+		outArray: con_ad77c1f4_f196_4fa7_8f83_308dcd953bd3
+	)
+
+	//:HIDDENPORT[outBit0] TRUE
+	//:HIDDENPORT[outBit1] TRUE
+	//:HIDDENPORT[outBit2] TRUE
+	//:HIDDENPORT[outBit3] TRUE
+	//:HIDDENPORT[outBit4] TRUE
+	//:HIDDENPORT[outBit5] TRUE
+	//:HIDDENPORT[outBit6] TRUE
+	//:HIDDENPORT[outBit7] TRUE
+	FormatByteToBits
+	(
+		inValue: con_a20a8ecd_d5cd_4b9b_a087_e8549f98970e
+		outBit0: Nil
+		outBit1: Nil
+		outBit2: Nil
+		outBit3: Nil
+		outBit4: Nil
+		outBit5: Nil
+		outBit6: Nil
+		outBit7: Nil
+		outArray: con_ea97add4_e8d9_418a_adad_521f51824287
+	)
+
+	//:HIDDENPORT[inArray3] TRUE
+	//:HIDDENPORT[inArray4] TRUE
+	JoinArrays<Bool>
+	(
+		inArray1: con_ad77c1f4_f196_4fa7_8f83_308dcd953bd3
+		inArray2: con_ea97add4_e8d9_418a_adad_521f51824287
+		inArray3:
+			{
+			}
+		inArray4:
+			{
+			}
+		outJoinedArray: con_c00f80e9_fa30_4c75_8b34_bcd11d0bae3a
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_466bc727_0b55_4e1d_bf80_c1c2cdc9b494
+		inRegister: 1
+		outValue_Lo: con_bd4e899e_4035_41d6_a778_2a275060e7d5
+		outValue_Hi: con_cfceede3_6dab_44db_84fd_61dc7f9eddfd
+		outValue16Bit: con_e7948a86_1249_4eec_becd_b4c90332664d
+	)
+
+	//:HIDDENPORT[outBit0] TRUE
+	//:HIDDENPORT[outBit1] TRUE
+	//:HIDDENPORT[outBit2] TRUE
+	//:HIDDENPORT[outBit3] TRUE
+	//:HIDDENPORT[outBit4] TRUE
+	//:HIDDENPORT[outBit5] TRUE
+	//:HIDDENPORT[outBit6] TRUE
+	//:HIDDENPORT[outBit7] TRUE
+	FormatByteToBits
+	(
+		inValue: con_bd4e899e_4035_41d6_a778_2a275060e7d5
+		outBit0: Nil
+		outBit1: Nil
+		outBit2: Nil
+		outBit3: Nil
+		outBit4: Nil
+		outBit5: Nil
+		outBit6: Nil
+		outBit7: Nil
+		outArray: con_c651cde8_15f8_4a88_abf9_4e5379725ea4
+	)
+
+	//:HIDDENPORT[outBit0] TRUE
+	//:HIDDENPORT[outBit1] TRUE
+	//:HIDDENPORT[outBit2] TRUE
+	//:HIDDENPORT[outBit3] TRUE
+	//:HIDDENPORT[outBit4] TRUE
+	//:HIDDENPORT[outBit5] TRUE
+	//:HIDDENPORT[outBit6] TRUE
+	//:HIDDENPORT[outBit7] TRUE
+	FormatByteToBits
+	(
+		inValue: con_cfceede3_6dab_44db_84fd_61dc7f9eddfd
+		outBit0: Nil
+		outBit1: Nil
+		outBit2: Nil
+		outBit3: Nil
+		outBit4: Nil
+		outBit5: Nil
+		outBit6: Nil
+		outBit7: Nil
+		outArray: con_0c6bde23_a9e4_4f50_90bc_c00aa6f27c83
+	)
+
+	//:HIDDENPORT[inArray3] TRUE
+	//:HIDDENPORT[inArray4] TRUE
+	JoinArrays<Bool>
+	(
+		inArray1: con_c651cde8_15f8_4a88_abf9_4e5379725ea4
+		inArray2: con_0c6bde23_a9e4_4f50_90bc_c00aa6f27c83
+		inArray3:
+			{
+			}
+		inArray4:
+			{
+			}
+		outJoinedArray: con_d6e7af2b_6e55_4684_a8df_1501d061039a
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_466bc727_0b55_4e1d_bf80_c1c2cdc9b494
+		inRegister: 2
+		outValue_Lo: con_3e2f3c9f_eb89_4f3f_9d21_d7d5f5ffc06f
+		outValue_Hi: con_5c114ac6_06c5_4a19_bbae_db7aa02f1b10
+		outValue16Bit: Nil
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_466bc727_0b55_4e1d_bf80_c1c2cdc9b494
+		inRegister: 3
+		outValue_Lo: Nil
+		outValue_Hi: Nil
+		outValue16Bit: con_55fdf8c1_b608_47d8_9ee6_f00872bde5ee
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_466bc727_0b55_4e1d_bf80_c1c2cdc9b494
+		inRegister: 4
+		outValue_Lo: Nil
+		outValue_Hi: Nil
+		outValue16Bit: con_b8f2794e_67c1_4380_9148_e80d2ebe645b
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_466bc727_0b55_4e1d_bf80_c1c2cdc9b494
+		inRegister: 5
+		outValue_Lo: Nil
+		outValue_Hi: Nil
+		outValue16Bit: con_fca932a8_8da5_4d73_bea4_6dfa79cb92ef
+	)
+
+	expression
+	{
+		Integer inValue16Bit
+		Integer inValue16Bit2
+		Long outErrorCode = "(long(inValue16Bit2) << 16) | long(inValue16Bit)"
+	}
+	(
+		inValue16Bit: con_b8f2794e_67c1_4380_9148_e80d2ebe645b
+		inValue16Bit2: con_fca932a8_8da5_4d73_bea4_6dfa79cb92ef
+		outErrorCode: con_68d10e0d_8491_452a_8065_b9649a703959
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_466bc727_0b55_4e1d_bf80_c1c2cdc9b494
+		inRegister: 6
+		outValue_Lo: con_ab281d0b_fde0_4c8d_950e_200e11c4f4ae
+		outValue_Hi: con_837d08c6_a5d9_4fb8_9bbf_bd46df4fa19d
+		outValue16Bit: Nil
+	)
+
+	ExtractModbusRegisterValues
+	(
+		inBuffer: con_466bc727_0b55_4e1d_bf80_c1c2cdc9b494
+		inRegister: 7
+		outValue_Lo: Nil
+		outValue_Hi: Nil
+		outValue16Bit: con_b49b2c91_3bba_4581_bc57_46e14e3803b5
+	)
+}
+
+//:USETYPE EVENTHANDLER
+public WriteCommandData()
+{
+	//0-3 Seq number
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerToBuffer
+	(
+		inBuffer: ByteBuffer()
+		inOffset: Nil
+		inValue: ext_con_c3195be0_e060_4cdc_9b91_9acb2f136e81
+		inFormat: Unsigned_32Bit_BigEndian
+		outBuffer: con_564a81bf_8551_4009_b4e0_ce63474e9dbb
+	)
+
+	//4-5 total length
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerToBuffer
+	(
+		inBuffer: con_564a81bf_8551_4009_b4e0_ce63474e9dbb
+		inOffset: Nil
+		inValue: ext_con_c5d89865_6138_49db_ae8c_aea08d8c3d88
+		inFormat: Unsigned_16Bit_BigEndian
+		outBuffer: con_e6a2197d_b5ff_41b4_bdc3_512533c9f47c
+	)
+
+	//6-9 Reserved
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerToBuffer
+	(
+		inBuffer: con_e6a2197d_b5ff_41b4_bdc3_512533c9f47c
+		inOffset: Nil
+		inValue: ext_con_692a29b0_7c0a_4bf7_abb5_ecda9b3c2619
+		inFormat: Unsigned_32Bit_BigEndian
+		outBuffer: con_7f5396fe_460f_4700_b843_ae45dc58e5e7
+	)
+
+	//10 Mode
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerToBuffer
+	(
+		inBuffer: con_7f5396fe_460f_4700_b843_ae45dc58e5e7
+		inOffset: Nil
+		inValue: ext_con_343c7fcf_2527_40b5_bead_0bccd56f1011
+		inFormat: Unsigned_8Bit
+		outBuffer: con_722e28ee_77f9_4cd1_bedc_00fe37a2e048
+	)
+
+	//11 Reserved
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerToBuffer
+	(
+		inBuffer: con_722e28ee_77f9_4cd1_bedc_00fe37a2e048
+		inOffset: Nil
+		inValue: ext_con_a6f0ee0f_fe92_49cf_943c_a8d353157809
+		inFormat: Unsigned_8Bit
+		outBuffer: con_33abf68d_4fce_43fa_80e2_5b2ae0001919
+	)
+
+	//12-13 Reserved
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerToBuffer
+	(
+		inBuffer: con_33abf68d_4fce_43fa_80e2_5b2ae0001919
+		inOffset: Nil
+		inValue: ext_con_24ca6ddd_41dd_4809_8113_1e3c674fc9d3
+		inFormat: Unsigned_16Bit_BigEndian
+		outBuffer: con_77975a14_2e4b_4d58_afc6_71345e06ee1c
+	)
+
+	//14-15 Count
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerToBuffer
+	(
+		inBuffer: con_77975a14_2e4b_4d58_afc6_71345e06ee1c
+		inOffset: Nil
+		inValue: ext_con_5f9bed85_b0ca_4375_a89c_d4ad704180cd
+		inFormat: Unsigned_16Bit_BigEndian
+		outBuffer: con_1b4e1033_4acc_46e6_812c_79d67d956ab2
+	)
+
+	CreateStringModbusBuffer
+	(
+		outBuffer: con_e42c7eb7_82ed_472c_924f_d4d1039df546
+	)
+
+	//:HIDDENPORT[inOffset] TRUE
+	//:HIDDENPORT[inSourceOffset] TRUE
+	//:HIDDENPORT[inSourceLength] TRUE
+	WriteBufferToBuffer
+	(
+		inBuffer: con_1b4e1033_4acc_46e6_812c_79d67d956ab2
+		inOffset: Nil
+		inSourceBuffer: con_e42c7eb7_82ed_472c_924f_d4d1039df546
+		inSourceOffset: 0
+		inSourceLength: Nil
+		outBuffer: con_4b8ce553_e46a_4911_8c36_a5ae6782800e
+	)
+
+	//:HIDDENPORT[inTimeout] TRUE
+	//:HIDDENPORT[inUnitID] TRUE
+	//:HIDDENPORT[inStartingAddress] TRUE
+	ModbusTCP_WriteMultipleRegisters_AsByteBuffer
+	(
+		inSocket: Socket
+		inTimeout: Nil
+		inUnitID: 1
+		inStartingAddress: 1100
+		inBuffer: con_4b8ce553_e46a_4911_8c36_a5ae6782800e
+	)
+}
+
+public CreateStringModbusBuffer(ByteBuffer outBuffer) step
+{
+	//16 - Length - Value
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inTextEncoding] TRUE
+	WriteStringToBuffer
+	(
+		inBuffer: ByteBuffer()
+		inOffset: Nil
+		inValue: ext_con_badff2a8_7064_4914_990c_d64b5da30f83
+		inFormat: VariableLength_Raw
+		inTextEncoding: ASCII
+		inMaxLength: 256
+		outBuffer: con_71dc4310_2507_45e8_a034_82bc7e443cd6
+		outBuffer.Size: con_f143b5c7_7707_40f6_b8b0_9bdba4179079
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerToBuffer
+	(
+		inBuffer: ByteBuffer()
+		inOffset: Nil
+		inValue: 0
+		inFormat: Unsigned_8Bit
+		outBuffer: con_6b9694b0_ef55_465a_aa53_bfd0b35d6367
+	)
+
+	expression
+	{
+		Integer inBufferSize
+		ByteBuffer inEmpty
+		ByteBuffer inSingle
+		ByteBuffer outAddpend = "inBufferSize mod 2 == 0 ? inEmpty : inSingle"
+		Integer outElems = "inBufferSize div 2 + (inBufferSize mod 2)"
+	}
+	(
+		inBufferSize: con_f143b5c7_7707_40f6_b8b0_9bdba4179079
+		inEmpty: ByteBuffer()
+		inSingle: con_6b9694b0_ef55_465a_aa53_bfd0b35d6367
+		outAddpend: con_087b2a4f_e83a_4490_b1aa_b5235dfc177c
+		outElems: con_ac52ae0e_b2e5_43bc_9da3_cd0f2ec864f5
+	)
+
+	//:HIDDENPORT[inOffset] TRUE
+	//:HIDDENPORT[inSourceOffset] TRUE
+	//:HIDDENPORT[inSourceLength] TRUE
+	WriteBufferToBuffer
+	(
+		inBuffer: con_71dc4310_2507_45e8_a034_82bc7e443cd6
+		inOffset: Nil
+		inSourceBuffer: con_087b2a4f_e83a_4490_b1aa_b5235dfc177c
+		inSourceOffset: 0
+		inSourceLength: Nil
+		outBuffer: con_0882ae67_4738_4cf4_add6_d8c4fa50bb8e
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerArrayFromBuffer
+	(
+		inBuffer: con_0882ae67_4738_4cf4_add6_d8c4fa50bb8e
+		inOffset: 0
+		inArraySize: con_ac52ae0e_b2e5_43bc_9da3_cd0f2ec864f5
+		inFormat: Unsigned_16Bit_LittleEndian
+		inCheckRange: True
+		outArray: con_cfca23e6_f5db_4eec_b1c4_24f2fa69c122
+		outOffset: Nil
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerArrayToBuffer
+	(
+		inBuffer: ByteBuffer()
+		inOffset: Nil
+		inArray: con_cfca23e6_f5db_4eec_b1c4_24f2fa69c122
+		inFormat: Unsigned_16Bit_BigEndian
+		outBuffer: con_73232dd9_c56a_4872_902d_c62af9e8ab12
+	)
+
+	outBuffer = con_73232dd9_c56a_4872_902d_c62af9e8ab12
+}
+

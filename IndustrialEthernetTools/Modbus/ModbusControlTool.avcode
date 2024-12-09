@@ -1050,7 +1050,7 @@ public Modbus_Connect()
 	{
 		SocketId? inSocket
 		Bool outEnabled = "inSocket == Nil"
-		String outStatus = "inSocket == NIL ? \"Not Connected\" : \"Connected\""
+		String outStatus = "inSocket == NIL ? \"Connection failed, try again\" : \"Connected\""
 	}
 	(
 		inSocket: con_bc826b16_e673_4a4c_8808_429386f04f97

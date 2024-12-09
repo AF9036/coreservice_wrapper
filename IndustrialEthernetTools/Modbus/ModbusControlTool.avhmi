@@ -30,7 +30,7 @@
             <Label>
               <Location>116, 71</Location>
               <Name>label48</Name>
-              <Size>196, 26</Size>
+              <Size>387, 26</Size>
               <TabIndex>3</TabIndex>
               <Text>Not Connected</Text>
               <Binding>

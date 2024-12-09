@@ -1,8 +1,9 @@
 ﻿<ViewSets Current="Custom1">
   <ViewSet Name="Custom1">
     <HSplit>
-      <Views Width="0.998" Height="0.944">
+      <Views Width="0.998" Height="0.946">
         <HmiView />
+        <View />
       </Views>
       <Views Width="0.998" Height="0.048">
         <View />

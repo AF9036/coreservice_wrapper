@@ -1,55 +1,91 @@
-﻿<HMI RelativeDPI="1">
-  <ClientSize>846, 712</ClientSize>
+﻿<HMI RelativeDPI="1.5">
+  <ClientSize>1269, 1068</ClientSize>
   <Controls>
     <TabControl>
       <Dock>Fill</Dock>
       <HeaderVisible>True</HeaderVisible>
-      <Location>0, 68</Location>
+      <Location>0, 102</Location>
+      <Margin>4, 4, 4, 4</Margin>
       <Name>tabControl1</Name>
-      <Size>846, 644</Size>
+      <Size>1269, 966</Size>
       <TabIndex>1</TabIndex>
       <Controls>
         <TabPage>
-          <Location>4, 22</Location>
+          <Location>4, 29</Location>
+          <Margin>4, 4, 4, 4</Margin>
           <Name>tabPage2</Name>
-          <Padding>3, 3, 3, 3</Padding>
-          <Size>838, 618</Size>
+          <Padding>4, 4, 4, 4</Padding>
+          <Size>1261, 933</Size>
           <TabIndex>0</TabIndex>
           <Text>General</Text>
           <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
           <Controls>
-            <TextBox>
-              <Location>77, 23</Location>
-              <Name>textBox1</Name>
-              <Size>175, 20</Size>
+            <Label>
+              <Location>22, 73</Location>
+              <Name>label49</Name>
+              <Size>88, 24</Size>
+              <TabIndex>4</TabIndex>
+              <Text>Status:</Text>
+            </Label>
+            <Label>
+              <Location>116, 71</Location>
+              <Name>label48</Name>
+              <Size>196, 26</Size>
+              <TabIndex>3</TabIndex>
+              <Text>Not Connected</Text>
+              <Binding>
+                <Input Property="Text" Macro="Modbus_Connect" Variable="con_a673aef2_44c6_4e4b_bcf6_2723ed7c15cc" VariantIndex="0" />
+              </Binding>
+            </Label>
+            <ImpulseButton>
+              <Location>383, 32</Location>
+              <Name>impulseButton4</Name>
+              <Size>120, 28</Size>
               <TabIndex>0</TabIndex>
+              <Text>&amp;Connect</Text>
+              <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
+              <Binding>
+                <Input Property="Enabled" Macro="Modbus_Connect" Variable="con_49cc3dfd_c5b9_4bde_9d96_836376a5c10c" VariantIndex="0" />
+                <Event Name="Click" Handler="Modbus_Connect" />
+              </Binding>
+            </ImpulseButton>
+            <TextBox>
+              <Location>116, 34</Location>
+              <Margin>4, 4, 4, 4</Margin>
+              <Name>textBox1</Name>
+              <Size>260, 26</Size>
+              <TabIndex>1</TabIndex>
               <Text>172.16.90.194</Text>
               <Binding>
+                <Input Property="Enabled" Macro="Modbus_Connect" Variable="con_49cc3dfd_c5b9_4bde_9d96_836376a5c10c" VariantIndex="0" />
                 <Output Property="Text" Variable="ext_con_c57964b8_ee25_45bb_a774_a5cd39eea368" />
               </Binding>
             </TextBox>
             <Label>
-              <Location>15, 26</Location>
+              <Location>22, 39</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label20</Name>
-              <Size>100, 23</Size>
-              <TabIndex>1</TabIndex>
+              <Size>150, 34</Size>
+              <TabIndex>2</TabIndex>
               <Text>IP Address:</Text>
             </Label>
           </Controls>
         </TabPage>
         <TabPage>
-          <Location>4, 22</Location>
+          <Location>4, 29</Location>
+          <Margin>4, 4, 4, 4</Margin>
           <Name>tabPage1</Name>
-          <Padding>3, 3, 3, 3</Padding>
-          <Size>838, 618</Size>
+          <Padding>4, 4, 4, 4</Padding>
+          <Size>1261, 933</Size>
           <TabIndex>1</TabIndex>
           <Text>Command Registers</Text>
           <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
           <Controls>
             <CheckBox>
-              <Location>159, 233</Location>
+              <Location>238, 350</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBox15</Name>
-              <Size>131, 24</Size>
+              <Size>196, 36</Size>
               <TabIndex>30</TabIndex>
               <Text>Reserved 6</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -60,9 +96,10 @@
               </Binding>
             </CheckBox>
             <CheckBox>
-              <Location>159, 205</Location>
+              <Location>238, 308</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBox14</Name>
-              <Size>131, 24</Size>
+              <Size>196, 36</Size>
               <TabIndex>27</TabIndex>
               <Text>Reserved 5</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -73,9 +110,10 @@
               </Binding>
             </CheckBox>
             <CheckBox>
-              <Location>159, 177</Location>
+              <Location>238, 266</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBox13</Name>
-              <Size>131, 24</Size>
+              <Size>196, 36</Size>
               <TabIndex>23</TabIndex>
               <Text>Reserved 4</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -86,9 +124,10 @@
               </Binding>
             </CheckBox>
             <CheckBox>
-              <Location>159, 149</Location>
+              <Location>238, 224</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBox12</Name>
-              <Size>131, 24</Size>
+              <Size>196, 36</Size>
               <TabIndex>19</TabIndex>
               <Text>Reserved 3</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -99,9 +138,10 @@
               </Binding>
             </CheckBox>
             <CheckBox>
-              <Location>159, 93</Location>
+              <Location>238, 140</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBox11</Name>
-              <Size>131, 24</Size>
+              <Size>196, 36</Size>
               <TabIndex>10</TabIndex>
               <Text>Reserved 1</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -112,9 +152,10 @@
               </Binding>
             </CheckBox>
             <CheckBox>
-              <Location>159, 65</Location>
+              <Location>238, 98</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBox10</Name>
-              <Size>131, 24</Size>
+              <Size>196, 36</Size>
               <TabIndex>5</TabIndex>
               <Text>Reserved 0</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -125,9 +166,10 @@
               </Binding>
             </CheckBox>
             <ImpulseButton>
-              <Location>460, 403</Location>
+              <Location>690, 604</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>impulseButton2</Name>
-              <Size>120, 28</Size>
+              <Size>180, 42</Size>
               <TabIndex>49</TabIndex>
               <Text>Read</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -136,9 +178,10 @@
               </Binding>
             </ImpulseButton>
             <ImpulseButton>
-              <Location>334, 403</Location>
+              <Location>501, 604</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>impulseButton1</Name>
-              <Size>120, 28</Size>
+              <Size>180, 42</Size>
               <TabIndex>48</TabIndex>
               <Text>Send</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -147,10 +190,11 @@
               </Binding>
             </ImpulseButton>
             <NumericUpDown>
-              <Location>460, 359</Location>
+              <Location>690, 538</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>255</Maximum>
               <Name>numericUpDown14</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>46</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -160,17 +204,19 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>336, 361</Location>
+              <Location>504, 542</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label19</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>47</TabIndex>
               <Text>15 (Reserved):</Text>
             </Label>
             <NumericUpDown>
-              <Location>460, 333</Location>
+              <Location>690, 500</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>255</Maximum>
               <Name>numericUpDown13</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>42</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -180,17 +226,19 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>336, 335</Location>
+              <Location>504, 502</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label18</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>43</TabIndex>
               <Text>14 (Reserved):</Text>
             </Label>
             <NumericUpDown>
-              <Location>460, 307</Location>
+              <Location>690, 460</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>255</Maximum>
               <Name>numericUpDown12</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>38</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -200,17 +248,19 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>336, 309</Location>
+              <Location>504, 464</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label17</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>39</TabIndex>
               <Text>13 (Reserved):</Text>
             </Label>
             <NumericUpDown>
-              <Location>460, 281</Location>
+              <Location>690, 422</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>255</Maximum>
               <Name>numericUpDown11</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>36</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -220,17 +270,19 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>336, 283</Location>
+              <Location>504, 424</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label16</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>37</TabIndex>
               <Text>12 (Reserved):</Text>
             </Label>
             <NumericUpDown>
-              <Location>460, 253</Location>
+              <Location>690, 380</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>255</Maximum>
               <Name>numericUpDown10</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>32</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -240,17 +292,19 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>336, 255</Location>
+              <Location>504, 382</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label15</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>33</TabIndex>
               <Text>11 (Reserved):</Text>
             </Label>
             <NumericUpDown>
-              <Location>460, 227</Location>
+              <Location>690, 340</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>255</Maximum>
               <Name>numericUpDown9</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>28</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -260,17 +314,19 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>336, 229</Location>
+              <Location>504, 344</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label14</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>29</TabIndex>
               <Text>10 (Reserved):</Text>
             </Label>
             <NumericUpDown>
-              <Location>460, 201</Location>
+              <Location>690, 302</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>65535</Maximum>
               <Name>numericUpDown8</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>24</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -280,17 +336,19 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>335, 203</Location>
+              <Location>502, 304</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label13</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>25</TabIndex>
               <Text>8-9 (Seq Number):</Text>
             </Label>
             <NumericUpDown>
-              <Location>460, 173</Location>
+              <Location>690, 260</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>65535</Maximum>
               <Name>numericUpDown7</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>20</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -300,17 +358,19 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>335, 175</Location>
+              <Location>502, 262</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label12</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>22</TabIndex>
               <Text>6-7 (Slot Number):</Text>
             </Label>
             <NumericUpDown>
-              <Location>460, 145</Location>
+              <Location>690, 218</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>255</Maximum>
               <Name>numericUpDown6</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>18</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -320,17 +380,19 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>336, 145</Location>
+              <Location>504, 218</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label11</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>17</TabIndex>
               <Text>5 (Echo):</Text>
             </Label>
             <NumericUpDown>
-              <Location>460, 119</Location>
+              <Location>690, 178</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>255</Maximum>
               <Name>numericUpDown5</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>14</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -339,10 +401,11 @@
               </Binding>
             </NumericUpDown>
             <NumericUpDown>
-              <Location>159, 342</Location>
+              <Location>238, 513</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>255</Maximum>
               <Name>numericUpDown4</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>45</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -352,10 +415,11 @@
               </Binding>
             </NumericUpDown>
             <NumericUpDown>
-              <Location>26, 342</Location>
+              <Location>39, 513</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>255</Maximum>
               <Name>numericUpDown3</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>44</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -365,10 +429,11 @@
               </Binding>
             </NumericUpDown>
             <NumericUpDown>
-              <Location>460, 92</Location>
+              <Location>690, 138</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>255</Maximum>
               <Name>numericUpDown2</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>9</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -378,26 +443,29 @@
             </NumericUpDown>
             <Label>
               <Dock>Top</Dock>
-              <Location>3, 3</Location>
+              <Location>4, 4</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label10</Name>
-              <Size>832, 23</Size>
+              <Size>1248, 34</Size>
               <TabIndex>0</TabIndex>
               <Text>Command registers starting from location: 1000</Text>
               <TextAlign>MiddleCenter</TextAlign>
             </Label>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>335, 36</Location>
+              <Location>502, 54</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label9</Name>
-              <Size>100, 23</Size>
+              <Size>150, 34</Size>
               <TabIndex>3</TabIndex>
               <Text>Byte(s)</Text>
             </Label>
             <NumericUpDown>
-              <Location>460, 65</Location>
+              <Location>690, 98</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>255</Maximum>
               <Name>numericUpDown1</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>6</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -407,46 +475,52 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>336, 119</Location>
+              <Location>504, 178</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label8</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>13</TabIndex>
               <Text>4 (Echo):</Text>
             </Label>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>336, 93</Location>
+              <Location>504, 140</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label7</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>11</TabIndex>
               <Text>3 (Reserved):</Text>
             </Label>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>336, 67</Location>
+              <Location>504, 100</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label6</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>7</TabIndex>
               <Text>2 (Reserved):</Text>
             </Label>
             <Label>
-              <Location>159, 311</Location>
+              <Location>238, 466</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label5</Name>
-              <Size>100, 23</Size>
+              <Size>150, 34</Size>
               <TabIndex>40</TabIndex>
               <Text>Byte 1 Value:</Text>
             </Label>
             <Label>
-              <Location>26, 315</Location>
+              <Location>39, 472</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label4</Name>
-              <Size>100, 23</Size>
+              <Size>150, 34</Size>
               <TabIndex>41</TabIndex>
               <Text>Byte 0 Value:</Text>
             </Label>
             <CheckBox>
-              <Location>159, 261</Location>
+              <Location>238, 392</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBox9</Name>
-              <Size>104, 24</Size>
+              <Size>156, 36</Size>
               <TabIndex>34</TabIndex>
               <Text>Reset Counters</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -457,9 +531,10 @@
               </Binding>
             </CheckBox>
             <CheckBox>
-              <Location>159, 121</Location>
+              <Location>238, 182</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBox8</Name>
-              <Size>131, 24</Size>
+              <Size>196, 36</Size>
               <TabIndex>15</TabIndex>
               <Text>User Data Control</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -471,24 +546,27 @@
             </CheckBox>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>159, 36</Location>
+              <Location>238, 54</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label3</Name>
-              <Size>100, 23</Size>
+              <Size>150, 34</Size>
               <TabIndex>2</TabIndex>
               <Text>Byte 1</Text>
             </Label>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>26, 36</Location>
+              <Location>39, 54</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label2</Name>
-              <Size>100, 23</Size>
+              <Size>150, 34</Size>
               <TabIndex>1</TabIndex>
               <Text>Byte 0</Text>
             </Label>
             <CheckBox>
-              <Location>26, 145</Location>
+              <Location>39, 218</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBox3</Name>
-              <Size>104, 24</Size>
+              <Size>156, 36</Size>
               <TabIndex>16</TabIndex>
               <Text>Trigger Ack</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -499,9 +577,10 @@
               </Binding>
             </CheckBox>
             <CheckBox>
-              <Location>26, 265</Location>
+              <Location>39, 398</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBox7</Name>
-              <Size>143, 24</Size>
+              <Size>214, 36</Size>
               <TabIndex>35</TabIndex>
               <Text>Error Ack</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -512,9 +591,10 @@
               </Binding>
             </CheckBox>
             <CheckBox>
-              <Location>26, 65</Location>
+              <Location>39, 98</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBoxJobControl</Name>
-              <Size>104, 24</Size>
+              <Size>156, 36</Size>
               <TabIndex>4</TabIndex>
               <Text>Job Control</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -525,9 +605,10 @@
               </Binding>
             </CheckBox>
             <CheckBox>
-              <Location>26, 235</Location>
+              <Location>39, 352</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBox6</Name>
-              <Size>143, 24</Size>
+              <Size>214, 36</Size>
               <TabIndex>31</TabIndex>
               <Text>Error Buffer Enable</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -538,9 +619,10 @@
               </Binding>
             </CheckBox>
             <CheckBox>
-              <Location>26, 90</Location>
+              <Location>39, 135</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBox1</Name>
-              <Size>104, 24</Size>
+              <Size>156, 36</Size>
               <TabIndex>8</TabIndex>
               <Text>Trigger Enable</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -551,9 +633,10 @@
               </Binding>
             </CheckBox>
             <CheckBox>
-              <Location>26, 205</Location>
+              <Location>39, 308</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBox5</Name>
-              <Size>143, 24</Size>
+              <Size>214, 36</Size>
               <TabIndex>26</TabIndex>
               <Text>Result Buffer Control</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -564,9 +647,10 @@
               </Binding>
             </CheckBox>
             <CheckBox>
-              <Location>26, 115</Location>
+              <Location>39, 172</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBox2</Name>
-              <Size>104, 24</Size>
+              <Size>156, 36</Size>
               <TabIndex>12</TabIndex>
               <Text>Trigger</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -577,9 +661,10 @@
               </Binding>
             </CheckBox>
             <CheckBox>
-              <Location>26, 175</Location>
+              <Location>39, 262</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>checkBox4</Name>
-              <Size>104, 24</Size>
+              <Size>156, 36</Size>
               <TabIndex>21</TabIndex>
               <Text>Job Slot Control</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -592,20 +677,22 @@
           </Controls>
         </TabPage>
         <TabPage>
-          <Location>4, 22</Location>
+          <Location>4, 29</Location>
+          <Margin>4, 4, 4, 4</Margin>
           <Name>tabPage3</Name>
-          <Padding>3, 3, 3, 3</Padding>
-          <Size>838, 618</Size>
+          <Padding>4, 4, 4, 4</Padding>
+          <Size>1261, 933</Size>
           <TabIndex>2</TabIndex>
           <Text>Response Registers</Text>
           <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
           <Controls>
             <NumericUpDown>
               <Enabled>False</Enabled>
-              <Location>282, 493</Location>
+              <Location>423, 740</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>1000000</Maximum>
               <Name>numericUpDown26</Name>
-              <Size>72, 20</Size>
+              <Size>108, 26</Size>
               <TabIndex>30</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -614,10 +701,11 @@
             </NumericUpDown>
             <NumericUpDown>
               <Enabled>False</Enabled>
-              <Location>282, 467</Location>
+              <Location>423, 700</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>1000000</Maximum>
               <Name>numericUpDown27</Name>
-              <Size>72, 20</Size>
+              <Size>108, 26</Size>
               <TabIndex>26</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -626,10 +714,11 @@
             </NumericUpDown>
             <NumericUpDown>
               <Enabled>False</Enabled>
-              <Location>282, 442</Location>
+              <Location>423, 663</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>1000000</Maximum>
               <Name>numericUpDown28</Name>
-              <Size>72, 20</Size>
+              <Size>108, 26</Size>
               <TabIndex>20</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -638,34 +727,38 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>211, 490</Location>
+              <Location>316, 735</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label33</Name>
-              <Size>65, 23</Size>
+              <Size>98, 34</Size>
               <TabIndex>28</TabIndex>
               <Text>Value:</Text>
             </Label>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>211, 467</Location>
+              <Location>316, 700</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label34</Name>
-              <Size>71, 23</Size>
+              <Size>106, 34</Size>
               <TabIndex>25</TabIndex>
               <Text>Value Hi:</Text>
             </Label>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>211, 444</Location>
+              <Location>316, 666</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label35</Name>
-              <Size>65, 23</Size>
+              <Size>98, 34</Size>
               <TabIndex>22</TabIndex>
               <Text>Value Lo:</Text>
             </Label>
             <NumericUpDown>
               <Enabled>False</Enabled>
-              <Location>108, 493</Location>
+              <Location>162, 740</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>1000000</Maximum>
               <Name>numericUpDown25</Name>
-              <Size>72, 20</Size>
+              <Size>108, 26</Size>
               <TabIndex>29</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -674,10 +767,11 @@
             </NumericUpDown>
             <NumericUpDown>
               <Enabled>False</Enabled>
-              <Location>108, 467</Location>
+              <Location>162, 700</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>1000000</Maximum>
               <Name>numericUpDown24</Name>
-              <Size>72, 20</Size>
+              <Size>108, 26</Size>
               <TabIndex>24</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -686,10 +780,11 @@
             </NumericUpDown>
             <NumericUpDown>
               <Enabled>False</Enabled>
-              <Location>108, 442</Location>
+              <Location>162, 663</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>1000000</Maximum>
               <Name>numericUpDown23</Name>
-              <Size>72, 20</Size>
+              <Size>108, 26</Size>
               <TabIndex>19</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -698,34 +793,38 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>37, 490</Location>
+              <Location>56, 735</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label32</Name>
-              <Size>65, 23</Size>
+              <Size>98, 34</Size>
               <TabIndex>27</TabIndex>
               <Text>Value:</Text>
             </Label>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>37, 467</Location>
+              <Location>56, 700</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label31</Name>
-              <Size>71, 23</Size>
+              <Size>106, 34</Size>
               <TabIndex>23</TabIndex>
               <Text>Value Hi:</Text>
             </Label>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>37, 444</Location>
+              <Location>56, 666</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label30</Name>
-              <Size>65, 23</Size>
+              <Size>98, 34</Size>
               <TabIndex>21</TabIndex>
               <Text>Value Lo:</Text>
             </Label>
             <NumericUpDown>
-              <Location>605, 369</Location>
+              <Location>908, 554</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>60</Maximum>
               <Minimum>1</Minimum>
               <Name>numericUpDown22</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>17</TabIndex>
               <Value>5</Value>
               <Binding>
@@ -733,18 +832,20 @@
               </Binding>
             </NumericUpDown>
             <Label>
-              <Location>499, 371</Location>
+              <Location>748, 556</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label29</Name>
-              <Size>100, 23</Size>
+              <Size>150, 34</Size>
               <TabIndex>18</TabIndex>
               <Text>Update Interval [s]</Text>
             </Label>
             <NumericUpDown>
               <Enabled>False</Enabled>
-              <Location>605, 194</Location>
+              <Location>908, 291</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>1000000</Maximum>
               <Name>numericUpDown21</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>15</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -753,18 +854,20 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>440, 196</Location>
+              <Location>660, 294</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label28</Name>
-              <Size>173, 23</Size>
+              <Size>260, 34</Size>
               <TabIndex>16</TabIndex>
               <Text>14-15 (Results Job Slot Nr):</Text>
             </Label>
             <NumericUpDown>
               <Enabled>False</Enabled>
-              <Location>605, 168</Location>
+              <Location>908, 252</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>1000000</Maximum>
               <Name>numericUpDown20</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>13</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -773,18 +876,20 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>440, 170</Location>
+              <Location>660, 255</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label27</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>14</TabIndex>
               <Text>13 (Reserved):</Text>
             </Label>
             <NumericUpDown>
               <Enabled>False</Enabled>
-              <Location>605, 142</Location>
+              <Location>908, 213</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>1000000</Maximum>
               <Name>numericUpDown19</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>11</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -793,18 +898,20 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>440, 144</Location>
+              <Location>660, 216</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label26</Name>
-              <Size>159, 23</Size>
+              <Size>238, 34</Size>
               <TabIndex>12</TabIndex>
               <Text>12 (Result Queue Count):</Text>
             </Label>
             <NumericUpDown>
               <Enabled>False</Enabled>
-              <Location>605, 116</Location>
+              <Location>908, 174</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>1000000</Maximum>
               <Name>numericUpDown18</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>9</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -813,18 +920,20 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>440, 120</Location>
+              <Location>660, 180</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label25</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>10</TabIndex>
               <Text>8-11 (Error Code):</Text>
             </Label>
             <NumericUpDown>
               <Enabled>False</Enabled>
-              <Location>605, 90</Location>
+              <Location>908, 135</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>1000000</Maximum>
               <Name>numericUpDown17</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>7</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -833,27 +942,30 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>439, 94</Location>
+              <Location>658, 141</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label24</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>8</TabIndex>
               <Text>6-7 (Slot Number):</Text>
             </Label>
             <Label>
               <Dock>Top</Dock>
-              <Location>3, 3</Location>
+              <Location>4, 4</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label23</Name>
-              <Size>832, 23</Size>
+              <Size>1248, 34</Size>
               <TabIndex>0</TabIndex>
               <Text>Response registers starting from location: 2000</Text>
               <TextAlign>MiddleCenter</TextAlign>
             </Label>
             <NumericUpDown>
               <Enabled>False</Enabled>
-              <Location>605, 64</Location>
+              <Location>908, 96</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>1000000</Maximum>
               <Name>numericUpDown15</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>5</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -862,18 +974,20 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>440, 66</Location>
+              <Location>660, 99</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label21</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>6</TabIndex>
               <Text>5 (Echo):</Text>
             </Label>
             <NumericUpDown>
               <Enabled>False</Enabled>
-              <Location>605, 38</Location>
+              <Location>908, 57</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>1000000</Maximum>
               <Name>numericUpDown16</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>3</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -882,16 +996,18 @@
             </NumericUpDown>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>440, 40</Location>
+              <Location>660, 60</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label22</Name>
-              <Size>133, 23</Size>
+              <Size>200, 34</Size>
               <TabIndex>4</TabIndex>
               <Text>4 (Echo):</Text>
             </Label>
             <BoolIndicatorBoard>
-              <Location>212, 38</Location>
+              <Location>318, 57</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>boolIndicatorBoard2</Name>
-              <Size>182, 398</Size>
+              <Size>273, 597</Size>
               <TabIndex>2</TabIndex>
               <Variables>
                 <ListContent>
@@ -918,9 +1034,10 @@
               </Binding>
             </BoolIndicatorBoard>
             <BoolIndicatorBoard>
-              <Location>36, 38</Location>
+              <Location>54, 57</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>boolIndicatorBoard1</Name>
-              <Size>158, 398</Size>
+              <Size>237, 597</Size>
               <TabIndex>1</TabIndex>
               <Variables>
                 <ListContent>
@@ -949,26 +1066,29 @@
           </Controls>
         </TabPage>
         <TabPage>
-          <Location>4, 22</Location>
+          <Location>4, 29</Location>
+          <Margin>4, 4, 4, 4</Margin>
           <Name>tabPage4</Name>
-          <Padding>3, 3, 3, 3</Padding>
-          <Size>838, 618</Size>
+          <Padding>4, 4, 4, 4</Padding>
+          <Size>1261, 933</Size>
           <TabIndex>3</TabIndex>
           <Text>Command Data</Text>
           <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
           <Controls>
             <Label>
               <ForeColor>Red</ForeColor>
-              <Location>432, 65</Location>
+              <Location>648, 98</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label47</Name>
-              <Size>211, 42</Size>
+              <Size>316, 63</Size>
               <TabIndex>3</TabIndex>
               <Text>Entry Mode not supported yet !</Text>
             </Label>
             <ImpulseButton>
-              <Location>121, 379</Location>
+              <Location>182, 568</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Name>impulseButton3</Name>
-              <Size>120, 28</Size>
+              <Size>180, 42</Size>
               <TabIndex>20</TabIndex>
               <Text>Send</Text>
               <UseVisualStyleBackColor>True</UseVisualStyleBackColor>
@@ -977,10 +1097,11 @@
               </Binding>
             </ImpulseButton>
             <TextBox>
-              <Location>121, 257</Location>
+              <Location>182, 386</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Multiline>True</Multiline>
               <Name>textBox2</Name>
-              <Size>249, 106</Size>
+              <Size>372, 157</Size>
               <TabIndex>19</TabIndex>
               <Text>Value</Text>
               <Binding>
@@ -988,17 +1109,19 @@
               </Binding>
             </TextBox>
             <Label>
-              <Location>15, 257</Location>
+              <Location>22, 386</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label46</Name>
-              <Size>100, 23</Size>
+              <Size>150, 34</Size>
               <TabIndex>18</TabIndex>
               <Text>User Data:</Text>
             </Label>
             <NumericUpDown>
-              <Location>121, 223</Location>
+              <Location>182, 334</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>10000000</Maximum>
               <Name>numericUpDown35</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>16</TabIndex>
               <Value>1</Value>
               <Binding>
@@ -1006,17 +1129,19 @@
               </Binding>
             </NumericUpDown>
             <Label>
-              <Location>15, 225</Location>
+              <Location>22, 338</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label45</Name>
-              <Size>100, 23</Size>
+              <Size>150, 34</Size>
               <TabIndex>17</TabIndex>
               <Text>2 (Count 1-Raw):</Text>
             </Label>
             <NumericUpDown>
-              <Location>121, 200</Location>
+              <Location>182, 300</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>10000000</Maximum>
               <Name>numericUpDown34</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>14</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -1024,17 +1149,19 @@
               </Binding>
             </NumericUpDown>
             <Label>
-              <Location>15, 202</Location>
+              <Location>22, 303</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label44</Name>
-              <Size>100, 23</Size>
+              <Size>150, 34</Size>
               <TabIndex>15</TabIndex>
               <Text>2 (Reserved):</Text>
             </Label>
             <NumericUpDown>
-              <Location>121, 177</Location>
+              <Location>182, 266</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>10000000</Maximum>
               <Name>numericUpDown33</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>12</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -1042,24 +1169,27 @@
               </Binding>
             </NumericUpDown>
             <Label>
-              <Location>15, 179</Location>
+              <Location>22, 268</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label43</Name>
-              <Size>100, 23</Size>
+              <Size>150, 34</Size>
               <TabIndex>13</TabIndex>
               <Text>1 (Reserved):</Text>
             </Label>
             <Label>
-              <Location>121, 156</Location>
+              <Location>182, 234</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label42</Name>
-              <Size>120, 23</Size>
+              <Size>180, 34</Size>
               <TabIndex>11</TabIndex>
               <Text>0 - Entry 1 - Raw</Text>
             </Label>
             <NumericUpDown>
-              <Location>121, 133</Location>
+              <Location>182, 200</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>10000000</Maximum>
               <Name>numericUpDown32</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>9</TabIndex>
               <Value>1</Value>
               <Binding>
@@ -1067,17 +1197,19 @@
               </Binding>
             </NumericUpDown>
             <Label>
-              <Location>15, 135</Location>
+              <Location>22, 202</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label41</Name>
-              <Size>100, 23</Size>
+              <Size>150, 34</Size>
               <TabIndex>10</TabIndex>
               <Text>1 (Mode):</Text>
             </Label>
             <NumericUpDown>
-              <Location>121, 110</Location>
+              <Location>182, 165</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>10000000</Maximum>
               <Name>numericUpDown31</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>7</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -1085,18 +1217,20 @@
               </Binding>
             </NumericUpDown>
             <Label>
-              <Location>15, 112</Location>
+              <Location>22, 168</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label40</Name>
-              <Size>100, 23</Size>
+              <Size>150, 34</Size>
               <TabIndex>8</TabIndex>
               <Text>4 (Reserved):</Text>
             </Label>
             <NumericUpDown>
               <AutoEnabledNegate Provider="enabledManager1">True</AutoEnabledNegate>
-              <Location>121, 87</Location>
+              <Location>182, 130</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>65535</Maximum>
               <Name>numericUpDown30</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>5</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -1104,17 +1238,19 @@
               </Binding>
             </NumericUpDown>
             <Label>
-              <Location>15, 89</Location>
+              <Location>22, 134</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label39</Name>
-              <Size>100, 23</Size>
+              <Size>150, 34</Size>
               <TabIndex>6</TabIndex>
               <Text>2 (Total length):</Text>
             </Label>
             <NumericUpDown>
-              <Location>121, 64</Location>
+              <Location>182, 96</Location>
+              <Margin>4, 4, 4, 4</Margin>
               <Maximum>10000000</Maximum>
               <Name>numericUpDown29</Name>
-              <Size>120, 20</Size>
+              <Size>180, 26</Size>
               <TabIndex>2</TabIndex>
               <Value>0</Value>
               <Binding>
@@ -1122,25 +1258,28 @@
               </Binding>
             </NumericUpDown>
             <Label>
-              <Location>15, 66</Location>
+              <Location>22, 99</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label38</Name>
-              <Size>100, 23</Size>
+              <Size>150, 34</Size>
               <TabIndex>4</TabIndex>
               <Text>4 (Seq number):</Text>
             </Label>
             <Label>
               <Font>Microsoft Sans Serif, 8.25pt, style=Bold</Font>
-              <Location>15, 39</Location>
+              <Location>22, 58</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label37</Name>
-              <Size>100, 23</Size>
+              <Size>150, 34</Size>
               <TabIndex>1</TabIndex>
               <Text>Byte(s)</Text>
             </Label>
             <Label>
               <Dock>Top</Dock>
-              <Location>3, 3</Location>
+              <Location>4, 4</Location>
+              <Margin>4, 0, 4, 0</Margin>
               <Name>label36</Name>
-              <Size>832, 23</Size>
+              <Size>1248, 34</Size>
               <TabIndex>0</TabIndex>
               <Text>Command user data address: 1100</Text>
               <TextAlign>MiddleCenter</TextAlign>
@@ -1152,16 +1291,18 @@
     <Panel>
       <Dock>Top</Dock>
       <Location>0, 0</Location>
+      <Margin>4, 4, 4, 4</Margin>
       <Name>panel1</Name>
-      <Size>846, 68</Size>
+      <Size>1269, 102</Size>
       <TabIndex>0</TabIndex>
       <Controls>
         <Label>
           <Dock>Fill</Dock>
           <Font>Microsoft Sans Serif, 15.75pt</Font>
           <Location>0, 0</Location>
+          <Margin>4, 0, 4, 0</Margin>
           <Name>label1</Name>
-          <Size>846, 68</Size>
+          <Size>1269, 102</Size>
           <TabIndex>0</TabIndex>
           <Text>Aurora Industrial Ethernet</Text>
           <TextAlign>MiddleCenter</TextAlign>

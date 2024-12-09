@@ -1,3 +1,4 @@
+extern public SocketId? Socket
 extern public String ext_con_c57964b8_ee25_45bb_a774_a5cd39eea368 = "172.16.90.194"
 extern public Bool ext_con_54b7e2cd_0561_4338_bf6f_9031c635be79 = False
 extern public Bool ext_con_c695bc10_da5f_4cbe_96b4_ff67ef7a4c62 = False
@@ -30,42 +31,19 @@ extern public Bool ext_con_356dad60_e049_4472_afc3_424ae24da289 = False
 extern public Bool ext_con_c387d157_1657_434d_8127_86519b36fb59 = False
 extern public Bool ext_con_5ef68f92_9c53_4115_8671_065376930c19 = False
 extern public Integer ext_con_35edf925_8025_4a42_9e30_322deee59719 = 5
-extern public SocketId? Socket
-extern public Integer ext_con_c3195be0_e060_4cdc_9b91_9acb2f136e81 = 0
-extern public Integer ext_con_c5d89865_6138_49db_ae8c_aea08d8c3d88 = 0
-extern public Integer ext_con_692a29b0_7c0a_4bf7_abb5_ecda9b3c2619 = 0
-extern public Integer ext_con_343c7fcf_2527_40b5_bead_0bccd56f1011 = 1
-extern public Integer ext_con_a6f0ee0f_fe92_49cf_943c_a8d353157809 = 0
-extern public Integer ext_con_24ca6ddd_41dd_4809_8113_1e3c674fc9d3 = 0
-extern public Integer ext_con_5f9bed85_b0ca_4375_a89c_d4ad704180cd = 1
 extern public String ext_con_badff2a8_7064_4914_990c_d64b5da30f83 = "Value"
+extern public Integer ext_con_5f9bed85_b0ca_4375_a89c_d4ad704180cd = 1
+extern public Integer ext_con_24ca6ddd_41dd_4809_8113_1e3c674fc9d3 = 0
+extern public Integer ext_con_a6f0ee0f_fe92_49cf_943c_a8d353157809 = 0
+extern public Integer ext_con_343c7fcf_2527_40b5_bead_0bccd56f1011 = 1
+extern public Integer ext_con_692a29b0_7c0a_4bf7_abb5_ecda9b3c2619 = 0
+extern public Integer ext_con_c5d89865_6138_49db_ae8c_aea08d8c3d88 = 0
+extern public Integer ext_con_c3195be0_e060_4cdc_9b91_9acb2f136e81 = 0
 
 //:SECTIONSVISIBILITY Visible
 //:USETYPE WORKERTASK
 public Main()
 {
-
-section INITIALIZE:
-	//:HIDDENPORT[inTimeout] TRUE
-	//:HIDDENPORT[inKeepAliveTime] TRUE
-	ModbusTCP_Connect
-	(
-		inHost: ext_con_c57964b8_ee25_45bb_a774_a5cd39eea368
-		inPort: 502
-		inTimeout: 1000
-		inKeepAliveTime: Nil
-		outSocket: con_b698248e_3e68_47fb_bb34_528e265d8cdc
-	)
-
-	parameters write
-	{
-		inputs: Socket
-	}
-	(
-		inSocket: con_b698248e_3e68_47fb_bb34_528e265d8cdc
-	)
-
-section PROCESS:
 	UpdateResponseRegisters
 	(
 	)
@@ -1044,5 +1022,40 @@ public CreateStringModbusBuffer(ByteBuffer outBuffer) step
 	)
 
 	outBuffer = con_73232dd9_c56a_4872_902d_c62af9e8ab12
+}
+
+//:USETYPE EVENTHANDLER
+public Modbus_Connect()
+{
+	//:HIDDENPORT[inTimeout] TRUE
+	//:HIDDENPORT[inKeepAliveTime] TRUE
+	ModbusTCP_Connect
+	(
+		inHost: ext_con_c57964b8_ee25_45bb_a774_a5cd39eea368
+		inPort: 502
+		inTimeout: 1000
+		inKeepAliveTime: Nil
+		outSocket: con_bc826b16_e673_4a4c_8808_429386f04f97
+	)
+
+	parameters write
+	{
+		inputs: Socket
+	}
+	(
+		inSocket: con_bc826b16_e673_4a4c_8808_429386f04f97
+	)
+
+	expression
+	{
+		SocketId? inSocket
+		Bool outEnabled = "inSocket == Nil"
+		String outStatus = "inSocket == NIL ? \"Not Connected\" : \"Connected\""
+	}
+	(
+		inSocket: con_bc826b16_e673_4a4c_8808_429386f04f97
+		outEnabled: con_49cc3dfd_c5b9_4bde_9d96_836376a5c10c
+		outStatus: con_a673aef2_44c6_4e4b_bcf6_2723ed7c15cc
+	)
 }
 

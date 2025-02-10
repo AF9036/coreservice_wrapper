@@ -30,7 +30,6 @@ extern public Bool ext_con_0aae8278_6be9_4837_9764_516d9d0c0d26 = False
 extern public Bool ext_con_356dad60_e049_4472_afc3_424ae24da289 = False
 extern public Bool ext_con_c387d157_1657_434d_8127_86519b36fb59 = False
 extern public Bool ext_con_5ef68f92_9c53_4115_8671_065376930c19 = False
-extern public Integer ext_con_35edf925_8025_4a42_9e30_322deee59719 = 5
 extern public String ext_con_badff2a8_7064_4914_990c_d64b5da30f83 = "Value"
 extern public Integer ext_con_5f9bed85_b0ca_4375_a89c_d4ad704180cd = 1
 extern public Integer ext_con_24ca6ddd_41dd_4809_8113_1e3c674fc9d3 = 0
@@ -48,6 +47,10 @@ public Main()
 	(
 	)
 
+	UpdateResponseDataRegistersMapping
+	(
+	)
+
 	//:HIDDENPORT[inD] TRUE
 	//:HIDDENPORT[inE] TRUE
 	//:HIDDENPORT[inF] TRUE
@@ -55,7 +58,7 @@ public Main()
 	//:HIDDENPORT[inH] TRUE
 	MultiplyIntegers
 	(
-		inA: ext_con_35edf925_8025_4a42_9e30_322deee59719
+		inA: 1
 		inB: 1000
 		inC: 1
 		inD: 1
@@ -1056,6 +1059,423 @@ public Modbus_Connect()
 		inSocket: con_bc826b16_e673_4a4c_8808_429386f04f97
 		outEnabled: con_49cc3dfd_c5b9_4bde_9d96_836376a5c10c
 		outStatus: con_a673aef2_44c6_4e4b_bcf6_2723ed7c15cc
+	)
+}
+
+public UpdateResponseDataRegistersMapping() step
+{
+	//:HIDDENPORT[inTimeout] TRUE
+	//:HIDDENPORT[inUnitID] TRUE
+	//:HIDDENPORT[inStartingAddress] TRUE
+	//:HIDDENPORT[inCount] TRUE
+	ModbusTCP_ReadMultipleRegisters_AsByteBuffer
+	(
+		inSocket: Socket
+		inTimeout: Nil
+		inUnitID: 1
+		inStartingAddress: 2100
+		inCount: 125
+		outData: con_a6093d82_ad80_402f_a6e2_4ce77c9af7fe
+		outData.Size: con_f5c47370_c963_4f34_840b_715c9bd6f401
+	)
+
+	//Seqence number
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: con_a6093d82_ad80_402f_a6e2_4ce77c9af7fe
+		inOffset: 0
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_013f8226_3706_41d1_a277_1fca39a224f5
+		outOffset: Nil
+	)
+
+	//Total Length
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: con_a6093d82_ad80_402f_a6e2_4ce77c9af7fe
+		inOffset: 4
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_d72d46cc_4b1e_4601_b367_f91e0a33c0e3
+		outOffset: Nil
+	)
+
+	//Fragment
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: con_a6093d82_ad80_402f_a6e2_4ce77c9af7fe
+		inOffset: 6
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_e67b8819_a901_4ad0_973d_e09cc627d04a
+		outOffset: Nil
+	)
+
+	//Fragment Total Count
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: con_a6093d82_ad80_402f_a6e2_4ce77c9af7fe
+		inOffset: 8
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_0336cccc_6b0c_4e36_8732_86adb47cdf34
+		outOffset: Nil
+	)
+
+	//Mode
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: con_a6093d82_ad80_402f_a6e2_4ce77c9af7fe
+		inOffset: 10
+		inFormat: Unsigned_8Bit
+		inCheckRange: True
+		outValue: con_caa407ec_181e_40fd_a74c_c760e8949129
+		outOffset: Nil
+	)
+
+	//Status
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: con_a6093d82_ad80_402f_a6e2_4ce77c9af7fe
+		inOffset: 11
+		inFormat: Unsigned_8Bit
+		inCheckRange: True
+		outValue: con_3174c5e3_deea_47a6_9d55_012d7021a71f
+		outOffset: Nil
+	)
+
+	//Job Time
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: con_a6093d82_ad80_402f_a6e2_4ce77c9af7fe
+		inOffset: 12
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_1b169959_f9eb_4dd7_a51a_50f56cb3838d
+		outOffset: Nil
+	)
+
+	//Count - number of data entries
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: con_a6093d82_ad80_402f_a6e2_4ce77c9af7fe
+		inOffset: 14
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_c729c3a6_d37a_43cb_8536_40995bf40ae7
+		outOffset: Nil
+	)
+
+	expression
+	{
+		ByteBuffer inData
+		Integer inDataSize
+		Integer outDataSize = "inDataSize - 16"
+	}
+	(
+		inData: con_a6093d82_ad80_402f_a6e2_4ce77c9af7fe
+		inDataSize: con_f5c47370_c963_4f34_840b_715c9bd6f401
+		outDataSize: con_36fb5d16_85ba_4060_8683_6a3e9ce6c4c2
+	)
+
+	ReadBufferArrayFromBuffer
+	(
+		inBuffer: con_a6093d82_ad80_402f_a6e2_4ce77c9af7fe
+		inOffset: 16
+		inElementSize: con_36fb5d16_85ba_4060_8683_6a3e9ce6c4c2
+		inElementsCount: 1
+		outArray: con_ab3e2789_7f5e_4b4b_8a0e_f59ff94eaab3
+		outOffset: Nil
+	)
+
+	//:HIDDENPORT[inInverse] TRUE
+	GetArrayElement<ByteBuffer>
+	(
+		inArray: con_ab3e2789_7f5e_4b4b_8a0e_f59ff94eaab3
+		inIndex: 0
+		inInverse: False
+		outValue: con_eb839f21_7df3_4fd9_8eea_3eb92cfcac98
+	)
+
+	ParseBarcodeResult
+	(
+		inBuffer: con_eb839f21_7df3_4fd9_8eea_3eb92cfcac98
+	)
+}
+
+public ParseBarcodeResult(ByteBuffer inBuffer) step
+{
+	//CodeType
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: inBuffer
+		inOffset: 0
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_9ab3d996_2a4a_43d7_bf26_472555bf7e9d
+		outOffset: Nil
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: inBuffer
+		inOffset: 2
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_aa663641_06ac_40fa_8375_3a755305e6ae
+		outOffset: Nil
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: inBuffer
+		inOffset: 4
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_6ffe2918_d6f7_44bd_a19c_c273523f82a2
+		outOffset: Nil
+	)
+
+	//:HIDDENPORT[inIntegerDigitCount] TRUE
+	//:HIDDENPORT[inFractionalDigitCount] TRUE
+	//:HIDDENPORT[inDecimalMark] TRUE
+	//:HIDDENPORT[inTrailingCharacter] TRUE
+	//:HIDDENPORT[inForceSignPrinting] TRUE
+	//:HIDDENPORT[inSuffix] TRUE
+	//:HIDDENPORT[inPrintBrackets] TRUE
+	FormatPoint2DToString
+	(
+		inIntegerDigitCount: 0
+		inFractionalDigitCount: 0
+		inDecimalMark: "."
+		inTrailingCharacter: "0"
+		inForceSignPrinting: False
+		inSuffix: ""
+		inPrintBrackets: True
+		inPoint.X: con_aa663641_06ac_40fa_8375_3a755305e6ae
+		inPoint.Y: con_6ffe2918_d6f7_44bd_a19c_c273523f82a2
+		outString: con_38953d5f_5a6c_42fd_84ea_efc59a6b1b17
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: inBuffer
+		inOffset: 6
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_7d5c7258_8e61_4741_abb0_b345afce0235
+		outOffset: Nil
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: inBuffer
+		inOffset: 8
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_424b408d_1123_4c3c_a08c_6edbe289ef66
+		outOffset: Nil
+	)
+
+	//:HIDDENPORT[inIntegerDigitCount] TRUE
+	//:HIDDENPORT[inFractionalDigitCount] TRUE
+	//:HIDDENPORT[inDecimalMark] TRUE
+	//:HIDDENPORT[inTrailingCharacter] TRUE
+	//:HIDDENPORT[inForceSignPrinting] TRUE
+	//:HIDDENPORT[inSuffix] TRUE
+	//:HIDDENPORT[inPrintBrackets] TRUE
+	FormatPoint2DToString
+	(
+		inIntegerDigitCount: 0
+		inFractionalDigitCount: 0
+		inDecimalMark: "."
+		inTrailingCharacter: "0"
+		inForceSignPrinting: False
+		inSuffix: ""
+		inPrintBrackets: True
+		inPoint.X: con_7d5c7258_8e61_4741_abb0_b345afce0235
+		inPoint.Y: con_424b408d_1123_4c3c_a08c_6edbe289ef66
+		outString: con_012142eb_f35e_480a_9ed5_07f8fa3a8a99
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: inBuffer
+		inOffset: 10
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_2eb0c775_7466_4716_9601_91fb03866993
+		outOffset: Nil
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: inBuffer
+		inOffset: 12
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_bd487f21_c638_4fd6_984c_b47008f114d8
+		outOffset: Nil
+	)
+
+	//:HIDDENPORT[inIntegerDigitCount] TRUE
+	//:HIDDENPORT[inFractionalDigitCount] TRUE
+	//:HIDDENPORT[inDecimalMark] TRUE
+	//:HIDDENPORT[inTrailingCharacter] TRUE
+	//:HIDDENPORT[inForceSignPrinting] TRUE
+	//:HIDDENPORT[inSuffix] TRUE
+	//:HIDDENPORT[inPrintBrackets] TRUE
+	FormatPoint2DToString
+	(
+		inIntegerDigitCount: 0
+		inFractionalDigitCount: 0
+		inDecimalMark: "."
+		inTrailingCharacter: "0"
+		inForceSignPrinting: False
+		inSuffix: ""
+		inPrintBrackets: True
+		inPoint.X: con_2eb0c775_7466_4716_9601_91fb03866993
+		inPoint.Y: con_bd487f21_c638_4fd6_984c_b47008f114d8
+		outString: con_5b75b693_2d04_4299_b3e6_bfd11e6f55c3
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: inBuffer
+		inOffset: 14
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_d6617bec_8c45_463a_9316_6ab1383ae320
+		outOffset: Nil
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: inBuffer
+		inOffset: 16
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_49c185ec_a0d9_4865_8bed_b81d6ff51383
+		outOffset: Nil
+	)
+
+	//:HIDDENPORT[inIntegerDigitCount] TRUE
+	//:HIDDENPORT[inFractionalDigitCount] TRUE
+	//:HIDDENPORT[inDecimalMark] TRUE
+	//:HIDDENPORT[inTrailingCharacter] TRUE
+	//:HIDDENPORT[inForceSignPrinting] TRUE
+	//:HIDDENPORT[inSuffix] TRUE
+	//:HIDDENPORT[inPrintBrackets] TRUE
+	FormatPoint2DToString
+	(
+		inIntegerDigitCount: 0
+		inFractionalDigitCount: 0
+		inDecimalMark: "."
+		inTrailingCharacter: "0"
+		inForceSignPrinting: False
+		inSuffix: ""
+		inPrintBrackets: True
+		inPoint.X: con_d6617bec_8c45_463a_9316_6ab1383ae320
+		inPoint.Y: con_49c185ec_a0d9_4865_8bed_b81d6ff51383
+		outString: con_ee06e9a9_a4c8_4a79_b1ba_16e5c6b59043
+	)
+
+	//Quality
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: inBuffer
+		inOffset: 18
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_6ee06e87_dfd7_410a_8123_b3dcdd6eecb4
+		outOffset: Nil
+	)
+
+	//PPM
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerFromBuffer
+	(
+		inBuffer: inBuffer
+		inOffset: 20
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outValue: con_2fdc1117_cc1a_4e13_b375_ae08c9062306
+		outOffset: Nil
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inCheckRange] TRUE
+	ReadIntegerArrayFromBuffer
+	(
+		inBuffer: inBuffer
+		inOffset: 22
+		inArraySize: 20
+		inFormat: Unsigned_16Bit_BigEndian
+		inCheckRange: True
+		outArray: con_7cca1364_990e_46c8_919e_e852a386f57c
+		outOffset: Nil
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerArrayToBuffer
+	(
+		inBuffer: ByteBuffer()
+		inOffset: Nil
+		inArray: con_7cca1364_990e_46c8_919e_e852a386f57c
+		inFormat: Unsigned_16Bit_LittleEndian
+		outBuffer: con_2cc5dbd0_4917_42c2_bf04_3061ac842c76
+		outBuffer.Size: con_08af4fd5_85a8_4a99_ba5b_46a13c30d6ea
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	//:HIDDENPORT[inTextEncoding] TRUE
+	ReadStringFromBuffer
+	(
+		inBuffer: con_2cc5dbd0_4917_42c2_bf04_3061ac842c76
+		inOffset: 0
+		inFormat: VariableLength_NullTerminated
+		inTextEncoding: ASCII
+		inMaxLength: con_08af4fd5_85a8_4a99_ba5b_46a13c30d6ea
+		outValue: con_6472d858_ffca_4eb9_b447_bd5d372cf9c6
+		outOffset: Nil
 	)
 }
 

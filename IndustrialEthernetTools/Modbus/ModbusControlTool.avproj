@@ -1,4 +1,4 @@
-﻿<AuroraVisionProject Name="ModbusControlTool" Version="5.5.2" Revision="78719" Product="Professional" StartUpProgramName="Main">
+﻿<AuroraVisionProject Name="ModbusControlTool" Version="5.4.7" Revision="73973" Product="Professional" StartUpProgramName="Main">
   <Files>
     <Program Path="ModbusControlTool.avcode" />
     <View Path="ModbusControlTool.avview" />

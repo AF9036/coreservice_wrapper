@@ -1462,18 +1462,28 @@ public ParseBarcodeResult(ByteBuffer inBuffer) step
 		inArray: con_7cca1364_990e_46c8_919e_e852a386f57c
 		inFormat: Unsigned_16Bit_LittleEndian
 		outBuffer: con_2cc5dbd0_4917_42c2_bf04_3061ac842c76
-		outBuffer.Size: con_08af4fd5_85a8_4a99_ba5b_46a13c30d6ea
+		outBuffer.Size: Nil
+	)
+
+	//:HIDDENPORT[inFormat] TRUE
+	WriteIntegerToBuffer
+	(
+		inBuffer: con_2cc5dbd0_4917_42c2_bf04_3061ac842c76
+		inOffset: Nil
+		inValue: 0
+		inFormat: Signed_32Bit_LittleEndian
+		outBuffer: con_e30c195a_749a_4f87_9b61_5825f5dea5a2
 	)
 
 	//:HIDDENPORT[inFormat] TRUE
 	//:HIDDENPORT[inTextEncoding] TRUE
 	ReadStringFromBuffer
 	(
-		inBuffer: con_2cc5dbd0_4917_42c2_bf04_3061ac842c76
+		inBuffer: con_e30c195a_749a_4f87_9b61_5825f5dea5a2
 		inOffset: 0
 		inFormat: VariableLength_NullTerminated
 		inTextEncoding: ASCII
-		inMaxLength: con_08af4fd5_85a8_4a99_ba5b_46a13c30d6ea
+		inMaxLength: 32000
 		outValue: con_6472d858_ffca_4eb9_b447_bd5d372cf9c6
 		outOffset: Nil
 	)
